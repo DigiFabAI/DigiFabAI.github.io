@@ -116,6 +116,63 @@
       gap: 12px;
     }
 
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--dark-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 20px 32px;
+      z-index: 999;
+    }
+
+    .mobile-nav.open {
+      display: block;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 12px 0;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--green-primary);
+    }
+
     .btn {
       padding: 10px 20px;
       border-radius: 8px;
@@ -477,6 +534,17 @@
       border: 1px solid var(--border-color);
     }
 
+    .audience-card-icon {
+      margin-bottom: 20px;
+    }
+
+    .audience-card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+    }
+
     .audience-card h3 {
       font-size: 24px;
       margin-bottom: 16px;
@@ -761,6 +829,10 @@
       nav {
         display: none;
       }
+
+      .mobile-menu-btn {
+        display: flex;
+      }
     }
 
     @media (max-width: 768px) {
@@ -840,11 +912,24 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div class="cta-buttons">
         <a href="https://calendly.com/berkunis-digifab" class="btn btn-primary" target="_blank">Talk to an Engineer</a>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#features" onclick="closeMobileMenu()">Features</a>
+    <a href="#platform" onclick="closeMobileMenu()">Platform</a>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -1019,6 +1104,7 @@
     </div>
     <div class="audience-grid">
       <div class="audience-card">
+        <div class="audience-card-icon"><i data-lucide="factory"></i></div>
         <h3>Machine OEMs</h3>
         <p>
           Builders who want differentiated monitoring and AI options on their platforms without standing up 
@@ -1026,6 +1112,7 @@
         </p>
       </div>
       <div class="audience-card">
+        <div class="audience-card-icon"><i data-lucide="building-2"></i></div>
         <h3>Tier 1 and Tier 2 Suppliers</h3>
         <p>
           Semiconductor, aerospace, energy, mobility, or industrial equipment suppliers who live with tight specs, increasing audit pressure, 
@@ -1033,6 +1120,7 @@
         </p>
       </div>
       <div class="audience-card">
+        <div class="audience-card-icon"><i data-lucide="flask-conical"></i></div>
         <h3>R&D and Pilot Lines</h3>
         <p>
           Teams running advanced materials, parameter development, or qualification campaigns that need richer 
@@ -1110,13 +1198,23 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 DigiFab AI • AI copilots for advanced manufacturing</p>
+    <p>© 2026 DigiFab AI • AI copilots for advanced manufacturing</p>
     <p>Based in Vancouver, Washington • Collaborating worldwide</p>
   </footer>
 
-  <!-- Initialize Lucide Icons -->
+  <!-- Initialize Lucide Icons and Mobile Menu -->
   <script>
     lucide.createIcons();
+
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('open');
+    }
+
+    function closeMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.remove('open');
+    }
   </script>
 </body>
 </html>
