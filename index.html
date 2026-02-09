@@ -22,6 +22,9 @@
   
   <link rel="icon" type="image/png" href="logo-mark.png">
   
+  <!-- Lucide Icons (outline style) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
   <style>
     :root {
       --green-primary: #1dce70;
@@ -354,6 +357,17 @@
       padding: 32px;
     }
 
+    .step-icon {
+      margin-bottom: 16px;
+    }
+
+    .step-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+    }
+
     .step-number {
       width: 56px;
       height: 56px;
@@ -664,6 +678,17 @@
       background: rgba(29, 206, 112, 0.05);
     }
 
+    .flow-box-icon {
+      margin-bottom: 16px;
+    }
+
+    .flow-box-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--green-primary);
+      stroke-width: 1.5;
+    }
+
     .flow-box h4 {
       font-size: 18px;
       margin-bottom: 12px;
@@ -852,16 +877,19 @@
       <h3 class="diagram-title">How DigiFab AI Integrates Into Manufacturing Workflows</h3>
       <div class="flow-diagram">
         <div class="flow-box">
+          <div class="flow-box-icon"><i data-lucide="cpu"></i></div>
           <h4>Your Process</h4>
           <p>Existing machines, sensors, vision systems, and control software</p>
         </div>
         <div class="flow-arrow">→</div>
         <div class="flow-box highlight">
+          <div class="flow-box-icon"><i data-lucide="brain-circuit"></i></div>
           <h4>AI Copilot</h4>
           <p>Real-time monitoring, defect prediction, and process intelligence during production</p>
         </div>
         <div class="flow-arrow">→</div>
         <div class="flow-box">
+          <div class="flow-box-icon"><i data-lucide="gauge"></i></div>
           <h4>Actionable Insights</h4>
           <p>Alerts, parameter recommendations, process adjustments, and audit-ready records</p>
         </div>
@@ -916,6 +944,7 @@
       </div>
       <div class="platform-grid">
         <div class="platform-step">
+          <div class="step-icon"><i data-lucide="scan-eye"></i></div>
           <div class="step-number">1</div>
           <h3>Observe</h3>
           <p>
@@ -929,6 +958,7 @@
           </div>
         </div>
         <div class="platform-step">
+          <div class="step-icon"><i data-lucide="network"></i></div>
           <div class="step-number">2</div>
           <h3>Understand</h3>
           <p>
@@ -942,6 +972,7 @@
           </div>
         </div>
         <div class="platform-step">
+          <div class="step-icon"><i data-lucide="zap"></i></div>
           <div class="step-number">3</div>
           <h3>Act</h3>
           <p>
@@ -1086,5 +1117,10 @@
     <p>© 2025 DigiFab AI • AI copilots for advanced manufacturing</p>
     <p>Based in Vancouver, Washington • Collaborating worldwide</p>
   </footer>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
