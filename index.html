@@ -20,8 +20,55 @@
   <meta property="twitter:description" content="We design, build, and deploy production-grade LLM and agentic AI systems for enterprise teams. Agentic workflows, RAG, and AI strategy.">
   <meta property="twitter:image" content="https://www.digifab.ai/logo-banner.jpg">
   
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Dr. Isil Berkun">
+  <meta name="keywords" content="LLM consulting, agentic AI, RAG systems, enterprise AI, AI strategy, LangGraph, AI evaluation, production AI systems">
+  <link rel="canonical" href="https://www.digifab.ai/">
+
   <link rel="icon" type="image/png" href="logo-mark.png">
-  
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DigiFab AI",
+    "url": "https://www.digifab.ai",
+    "logo": "https://www.digifab.ai/logo-mark.png",
+    "image": "https://www.digifab.ai/logo-banner.jpg",
+    "description": "Enterprise LLM and agentic AI consulting. We design, build, and deploy production-grade LLM and agentic AI systems for enterprise teams.",
+    "founder": {
+      "@type": "Person",
+      "name": "Dr. Isil Berkun",
+      "jobTitle": "Founder",
+      "alumniOf": [
+        {"@type": "Organization", "name": "Intel"},
+        {"@type": "CollegeOrUniversity", "name": "Columbia University"},
+        {"@type": "CollegeOrUniversity", "name": "Portland State University"},
+        {"@type": "CollegeOrUniversity", "name": "Michigan State University"}
+      ],
+      "knowsAbout": ["Large Language Models", "Agentic AI", "RAG Systems", "Deep Learning", "Machine Learning", "AI Strategy"],
+      "sameAs": [
+        "https://www.linkedin.com/in/isilberkun/",
+        "https://www.linkedin.com/learning/instructors/isil-berkun"
+      ]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vancouver",
+      "addressRegion": "WA",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/isilberkun/"
+    ],
+    "memberOf": {
+      "@type": "Organization",
+      "name": "NVIDIA Inception Program"
+    }
+  }
+  </script>
+
   <!-- Lucide Icons (outline style) -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   
@@ -724,6 +771,104 @@
       stroke-width: 1.5;
     }
 
+    /* Courses Section */
+    .courses {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 80px 32px;
+    }
+
+    .courses-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--green-primary);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .course-card {
+      background: var(--dark-card);
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .course-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green-primary);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .course-card h4 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+
+    .course-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .course-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .courses-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .nvidia-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(118, 185, 0, 0.1);
+      border: 1px solid rgba(118, 185, 0, 0.3);
+      border-radius: 24px;
+      font-size: 14px;
+      color: #76b900;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
     /* Footer */
     footer {
       max-width: 1280px;
@@ -756,12 +901,21 @@
 
       .features-grid,
       .platform-grid,
-      .audience-grid {
+      .audience-grid,
+      .courses-grid {
         grid-template-columns: 1fr;
       }
 
       .industries-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .courses-stats {
+        gap: 24px;
+      }
+
+      .stat-number {
+        font-size: 28px;
       }
 
       .about-grid {
@@ -857,6 +1011,7 @@
         <a href="#services">Services</a>
         <a href="#process">How We Work</a>
         <a href="#about">About</a>
+        <a href="#training">Training</a>
         <a href="#contact">Contact</a>
       </nav>
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -875,6 +1030,7 @@
     <a href="#services" onclick="closeMobileMenu()">Services</a>
     <a href="#process" onclick="closeMobileMenu()">How We Work</a>
     <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#training" onclick="closeMobileMenu()">Training</a>
     <a href="#contact" onclick="closeMobileMenu()">Contact</a>
   </div>
 
@@ -893,7 +1049,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="isil-portrait.jpg" alt="Dr Isil Berkun, Founder of DigiFab AI">
+      <img src="isil-portrait.jpg" alt="Dr. Isil Berkun, PhD — Founder of DigiFab AI, Enterprise LLM and Agentic AI Consultant" loading="eager">
     </div>
   </section>
 
@@ -1039,7 +1195,7 @@
     </div>
     <div class="about-grid">
       <div class="about-image">
-        <img src="isil-portrait.jpg" alt="Dr Isil Berkun">
+        <img src="isil-portrait.jpg" alt="Dr. Isil Berkun, PhD" loading="lazy">
       </div>
       <div class="about-content">
         <h3>Dr. Isil Berkun, PhD</h3>
@@ -1047,14 +1203,94 @@
         <p>
           Former Staff AI Software Engineer at Intel with a PhD in Electrical Engineering.
           Dr. Berkun has built production machine learning and LLM systems for enterprise environments
-          and teaches AI, deep learning, and generative AI to over 350,000 learners through
+          and teaches AI, deep learning, and generative AI to over 380,000 learners through
           LinkedIn Learning and universities including Columbia, Portland State, and Michigan State.
         </p>
         <p>
           DigiFab AI is her consultancy focused on helping enterprise teams design, build, and deploy
           production-grade LLM and agentic AI systems that deliver real business outcomes.
         </p>
+        <div class="nvidia-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          NVIDIA Inception Program Member
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Courses & Training Section -->
+  <section id="training" class="courses">
+    <div class="section-header">
+      <h2>Courses & Training</h2>
+      <p>
+        Dr. Berkun teaches AI, deep learning, and generative AI to a global audience
+        through LinkedIn Learning and top universities.
+      </p>
+    </div>
+    <div class="courses-stats">
+      <div class="stat-item">
+        <span class="stat-number">11</span>
+        <span class="stat-label">Courses</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">380,000+</span>
+        <span class="stat-label">Learners</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">19,800+</span>
+        <span class="stat-label">Followers</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">21,800+</span>
+        <span class="stat-label">Likes</span>
+      </div>
+    </div>
+    <div class="courses-grid">
+      <a href="https://www.linkedin.com/learning/python-working-with-predictive-analytics" target="_blank" rel="noopener" class="course-card">
+        <h4>Python: Working with Predictive Analytics</h4>
+        <div class="course-meta">
+          <span><i data-lucide="users" style="width:14px;height:14px"></i> 279,903</span>
+          <span><i data-lucide="heart" style="width:14px;height:14px"></i> 20,120</span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/learning/implement-and-evaluate-cloud-ai-solutions-foundations-of-responsible-ai" target="_blank" rel="noopener" class="course-card">
+        <h4>Implement and Evaluate Cloud AI Solutions: Foundations of Responsible AI</h4>
+        <div class="course-meta">
+          <span><i data-lucide="users" style="width:14px;height:14px"></i> 29,769</span>
+          <span><i data-lucide="heart" style="width:14px;height:14px"></i> 107</span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/learning/responsible-ai-algorithm-design" target="_blank" rel="noopener" class="course-card">
+        <h4>Responsible AI Algorithm Design</h4>
+        <div class="course-meta">
+          <span><i data-lucide="users" style="width:14px;height:14px"></i> 12,376</span>
+          <span><i data-lucide="heart" style="width:14px;height:14px"></i> 727</span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/learning/ai-foundations-ideating-and-prototyping" target="_blank" rel="noopener" class="course-card">
+        <h4>AI Foundations: Ideating and Prototyping</h4>
+        <div class="course-meta">
+          <span><i data-lucide="users" style="width:14px;height:14px"></i> 6,320</span>
+          <span><i data-lucide="heart" style="width:14px;height:14px"></i> 146</span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/learning/building-deep-learning-applications-with-keras" target="_blank" rel="noopener" class="course-card">
+        <h4>Building Deep Learning Applications with Keras</h4>
+        <div class="course-meta">
+          <span><i data-lucide="users" style="width:14px;height:14px"></i> 5,751</span>
+          <span><i data-lucide="heart" style="width:14px;height:14px"></i> 195</span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/learning/deep-learning-with-tensorflow" target="_blank" rel="noopener" class="course-card">
+        <h4>Deep Learning with TensorFlow: Insights and Innovations</h4>
+        <div class="course-meta">
+          <span><i data-lucide="users" style="width:14px;height:14px"></i> 3,956</span>
+          <span><i data-lucide="heart" style="width:14px;height:14px"></i> 86</span>
+        </div>
+      </a>
+    </div>
+    <div class="courses-cta">
+      <a href="https://www.linkedin.com/learning/instructors/isil-berkun" target="_blank" rel="noopener" class="btn btn-secondary">View All 11 Courses</a>
     </div>
   </section>
 
