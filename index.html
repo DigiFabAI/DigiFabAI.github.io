@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DigiFab AI - AI Copilots for Smart Manufacturing</title>
+  <title>Enterprise LLM & Agentic AI Consulting | DigiFab AI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="DigiFab AI builds multi-sensor AI copilots for real-time quality control in advanced manufacturing.">
-  
+  <meta name="description" content="DigiFab AI designs, builds, and deploys production-grade LLM and agentic AI systems for enterprise teams.">
+
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.digifab.ai/">
-  <meta property="og:title" content="DigiFab AI - AI Copilots for Smart Manufacturing">
-  <meta property="og:description" content="Real-time AI quality control for advanced manufacturing. Monitor, predict, and respond to defects as they form.">
+  <meta property="og:title" content="Enterprise LLM & Agentic AI Consulting | DigiFab AI">
+  <meta property="og:description" content="We design, build, and deploy production-grade LLM and agentic AI systems for enterprise teams. Agentic workflows, RAG, and AI strategy.">
   <meta property="og:image" content="https://www.digifab.ai/logo-banner.jpg">
-  
+
   <!-- Twitter Card Meta Tags -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.digifab.ai/">
-  <meta property="twitter:title" content="DigiFab AI - AI Copilots for Smart Manufacturing">
-  <meta property="twitter:description" content="Real-time AI quality control for advanced manufacturing. Monitor, predict, and respond to defects as they form.">
+  <meta property="twitter:title" content="Enterprise LLM & Agentic AI Consulting | DigiFab AI">
+  <meta property="twitter:description" content="We design, build, and deploy production-grade LLM and agentic AI systems for enterprise teams. Agentic workflows, RAG, and AI strategy.">
   <meta property="twitter:image" content="https://www.digifab.ai/logo-banner.jpg">
   
   <link rel="icon" type="image/png" href="logo-mark.png">
@@ -360,6 +360,12 @@
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 32px;
     }
 
@@ -707,82 +713,15 @@
       text-align: center;
     }
 
-    /* Visual Diagram */
-    .visual-diagram {
-      max-width: 1000px;
-      margin: 60px auto 0;
-      padding: 50px 40px;
-      background: var(--dark-surface);
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
+    .feature-card-icon {
+      margin-bottom: 20px;
     }
 
-    .diagram-title {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 40px;
-      font-weight: 600;
-    }
-
-    .flow-diagram {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .flow-box {
-      flex: 1;
-      background: var(--dark-card);
-      padding: 30px 20px;
-      border-radius: 12px;
-      border: 2px solid var(--border-color);
-      text-align: center;
-      position: relative;
-    }
-
-    .flow-box.highlight {
-      border-color: var(--green-primary);
-      background: rgba(29, 206, 112, 0.05);
-    }
-
-    .flow-box-icon {
-      margin-bottom: 16px;
-    }
-
-    .flow-box-icon svg {
-      width: 32px;
-      height: 32px;
-      stroke: var(--green-primary);
+    .feature-card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--text-muted);
       stroke-width: 1.5;
-    }
-
-    .flow-box h4 {
-      font-size: 18px;
-      margin-bottom: 12px;
-      color: var(--green-primary);
-    }
-
-    .flow-box p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .flow-arrow {
-      font-size: 32px;
-      color: var(--green-primary);
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 768px) {
-      .flow-diagram {
-        flex-direction: column;
-      }
-
-      .flow-arrow {
-        transform: rotate(90deg);
-      }
     }
 
     /* Footer */
@@ -821,6 +760,10 @@
         grid-template-columns: 1fr;
       }
 
+      .industries-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .about-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -857,6 +800,10 @@
       }
 
       .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .industries-grid {
         grid-template-columns: 1fr;
       }
 
@@ -907,8 +854,8 @@
         <span>DigiFab AI</span>
       </a>
       <nav>
-        <a href="#features">Features</a>
-        <a href="#platform">Platform</a>
+        <a href="#services">Services</a>
+        <a href="#process">How We Work</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -925,8 +872,8 @@
 
   <!-- Mobile Navigation -->
   <div class="mobile-nav" id="mobileNav">
-    <a href="#features" onclick="closeMobileMenu()">Features</a>
-    <a href="#platform" onclick="closeMobileMenu()">Platform</a>
+    <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#process" onclick="closeMobileMenu()">How We Work</a>
     <a href="#about" onclick="closeMobileMenu()">About</a>
     <a href="#contact" onclick="closeMobileMenu()">Contact</a>
   </div>
@@ -935,14 +882,14 @@
   <section class="hero">
     <div class="hero-content">
       <h1>
-        The <span class="highlight">Intelligence Layer</span> for Real-Time Manufacturing Quality
+        <span class="highlight">LLM Systems.</span> Agentic Workflows.<br>Real Business Impact.
       </h1>
       <p>
-        Monitor, predict, and adapt manufacturing processes in real time with AI copilots that operate inside your existing systems, not just on dashboards.
+        We design, build, and deploy production-grade LLM and agentic AI systems for enterprise teams.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Talk to an Engineer</a>
-        <a href="#platform" class="btn btn-secondary">See How It Works</a>
+        <a href="#process" class="btn btn-secondary">See How It Works</a>
       </div>
     </div>
     <div class="hero-image">
@@ -950,119 +897,135 @@
     </div>
   </section>
 
-  <!-- Value Prop Section -->
-  <section class="trust-section">
-
-    <!-- Visual Diagram -->
-    <div class="visual-diagram">
-      <h3 class="diagram-title">How DigiFab AI Integrates Into Manufacturing Workflows</h3>
-      <div class="flow-diagram">
-        <div class="flow-box">
-          <div class="flow-box-icon"><i data-lucide="cpu"></i></div>
-          <h4>Your Process</h4>
-          <p>Existing machines, sensors, vision systems, and control software</p>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box highlight">
-          <div class="flow-box-icon"><i data-lucide="brain-circuit"></i></div>
-          <h4>AI Copilot</h4>
-          <p>Real-time monitoring, defect prediction, and process intelligence during production</p>
-        </div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box">
-          <div class="flow-box-icon"><i data-lucide="gauge"></i></div>
-          <h4>Actionable Insights</h4>
-          <p>Alerts, parameter recommendations, process adjustments, and audit-ready records</p>
-        </div>
-      </div>
-      <p style="color: var(--text-secondary); font-size: 16px; margin-top: 32px;">Any machine. Any sensor. One adaptive AI layer.</p>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="features">
+  <!-- Services Section -->
+  <section id="services" class="features">
     <div class="section-header">
-      <h2>Why This Matters for Modern Manufacturing</h2>
+      <h2>What We Build</h2>
       <p>
-        Most production lines treat quality control as a post-production activity. By the time inspection finds something wrong, 
-        the part and the time are already gone. DigiFab AI moves quality into the loop, embedded directly where production decisions happen.
+        We help enterprise teams move from AI experiments to production-grade LLM systems
+        that deliver measurable business value.
       </p>
     </div>
     <div class="features-grid">
       <div class="feature-card">
-        <h3>Catch Defects While You Can Still Act</h3>
+        <div class="feature-card-icon"><i data-lucide="bot"></i></div>
+        <h3>Agentic Workflow Design</h3>
         <p>
-          Monitor process stability, thermal signatures, and quality indicators at high resolution so you can pause, 
-          adjust, or intervene early instead of discovering problems days later.
+          Multi-agent orchestration systems using LangGraph, tool-using agents, and human-in-the-loop patterns.
+          We design agent architectures that are reliable, observable, and ready for production.
         </p>
       </div>
       <div class="feature-card">
-        <h3>Generalize Across Materials and Systems</h3>
+        <div class="feature-card-icon"><i data-lucide="database"></i></div>
+        <h3>RAG & Knowledge Systems</h3>
         <p>
-          Our models learn representations that transfer across materials, parameter sets, and machine types, 
-          reducing the cost of deploying AI at scale across your facility.
+          Enterprise retrieval-augmented generation with vector databases, hybrid search, chunking strategies,
+          and grounding pipelines that give your LLMs accurate, source-cited answers.
         </p>
       </div>
       <div class="feature-card">
-        <h3>Build a Data Asset, Not a Dashboard</h3>
+        <div class="feature-card-icon"><i data-lucide="bar-chart-3"></i></div>
+        <h3>LLM Evaluation & AI Strategy</h3>
         <p>
-          Structured logs, explainable alerts, and clear audit trails make it easier to plug into MES, PLM, 
-          and certification workflows instead of creating yet another silo.
+          Systematic benchmarking, guardrails, prompt engineering audits, and team enablement.
+          We help you measure what matters and build internal AI capability that lasts.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Platform Section -->
-  <section id="platform" class="platform">
+  <!-- Industries Section -->
+  <section id="industries" class="features">
+    <div class="section-header">
+      <h2>Industries We Serve</h2>
+      <p>
+        We build LLM and agentic AI systems for teams operating in regulated, data-rich,
+        and operations-heavy environments.
+      </p>
+    </div>
+    <div class="industries-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="landmark"></i></div>
+        <h3>Financial Services & Banking</h3>
+        <p>
+          LLM agents for compliance, fraud detection, and customer intelligence.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="factory"></i></div>
+        <h3>Manufacturing & Industrial</h3>
+        <p>
+          Process intelligence, quality systems, and operational AI.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="heart-pulse"></i></div>
+        <h3>Healthcare & Life Sciences</h3>
+        <p>
+          Clinical workflow automation, document AI, and knowledge retrieval.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i data-lucide="server"></i></div>
+        <h3>Enterprise Technology</h3>
+        <p>
+          Internal AI platforms, developer tooling, and agentic productivity systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work Section -->
+  <section id="process" class="platform">
     <div class="platform-inner">
       <div class="section-header">
-        <h2>How the DigiFab AI Copilot Works</h2>
+        <h2>How We Work</h2>
         <p>
-          We work with the sensors and control interfaces you already have. The copilot ingests your signals, 
-          learns your process, and surfaces actionable insights without forcing you to re-architect the line.
+          A structured engagement model that takes you from idea to production deployment,
+          with clarity at every stage.
         </p>
       </div>
       <div class="platform-grid">
         <div class="platform-step">
-          <div class="step-icon"><i data-lucide="scan-eye"></i></div>
+          <div class="step-icon"><i data-lucide="search"></i></div>
           <div class="step-number">1</div>
-          <h3>Observe</h3>
+          <h3>Discover</h3>
           <p>
-            Connect cameras, photodiodes, pyrometers, acoustic emission, and log streams. We align and synchronize 
-            signals from microseconds to production layers.
+            We audit your current workflows, data sources, and AI readiness. We identify the highest-impact
+            use cases and define success criteria before writing any code.
           </p>
           <div class="tags">
-            <span class="tag">Additive Manufacturing</span>
-            <span class="tag">Advanced Fabrication</span>
-            <span class="tag">Continuous Processes</span>
+            <span class="tag">Strategy</span>
+            <span class="tag">Use Case Mapping</span>
+            <span class="tag">Data Audit</span>
           </div>
         </div>
         <div class="platform-step">
-          <div class="step-icon"><i data-lucide="network"></i></div>
+          <div class="step-icon"><i data-lucide="code"></i></div>
           <div class="step-number">2</div>
-          <h3>Understand</h3>
+          <h3>Build</h3>
           <p>
-            Vision transformers and temporal models transform raw sensor data into defect predictions, 
-            process regimes, and risk scores across regions of the build or part.
+            We architect and implement your LLM system — agents, retrieval pipelines, evaluations,
+            and integrations — with production-grade engineering from day one.
           </p>
           <div class="tags">
-            <span class="tag">Process Analytics</span>
-            <span class="tag">Defect Prediction</span>
-            <span class="tag">Quality Scoring</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">RAG Pipelines</span>
+            <span class="tag">Evaluation Suites</span>
           </div>
         </div>
         <div class="platform-step">
-          <div class="step-icon"><i data-lucide="zap"></i></div>
+          <div class="step-icon"><i data-lucide="rocket"></i></div>
           <div class="step-number">3</div>
-          <h3>Act</h3>
+          <h3>Deploy & Scale</h3>
           <p>
-            The copilot can trigger alerts, flag regions for inspection, or send parameter nudges through your existing 
-            control systems, enabling gradual automation instead of a big bang.
+            We ship to production with monitoring, guardrails, and observability built in.
+            Then we help your team own and extend the system independently.
           </p>
           <div class="tags">
-            <span class="tag">REST / gRPC APIs</span>
-            <span class="tag">On-prem or cloud</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">Monitoring</span>
+            <span class="tag">Team Enablement</span>
           </div>
         </div>
       </div>
@@ -1079,16 +1042,17 @@
         <img src="isil-portrait.jpg" alt="Dr Isil Berkun">
       </div>
       <div class="about-content">
-        <h3>Dr Isil Berkun</h3>
-        <p class="role">Founder, DigiFab AI • LinkedIn Top Voice</p>
+        <h3>Dr. Isil Berkun, PhD</h3>
+        <p class="role">Founder, DigiFab AI</p>
         <p>
-          Isil is a former Staff AI Software Engineer at Intel with a PhD in Electrical Engineering. 
-          She has built production machine learning systems for semiconductor, electronics, and manufacturing lines 
-          and teaches AI and predictive analytics through LinkedIn Learning and Columbia, Portland State and Michigan State universities.
+          Former Staff AI Software Engineer at Intel with a PhD in Electrical Engineering.
+          Dr. Berkun has built production machine learning and LLM systems for enterprise environments
+          and teaches AI, deep learning, and generative AI to over 350,000 learners through
+          LinkedIn Learning and universities including Columbia, Portland State, and Michigan State.
         </p>
         <p>
-          DigiFab AI is her focused effort to bring trustworthy, multi-sensor AI copilots directly into advanced manufacturing 
-          and smart fabrication workflows.
+          DigiFab AI is her consultancy focused on helping enterprise teams design, build, and deploy
+          production-grade LLM and agentic AI systems that deliver real business outcomes.
         </p>
       </div>
     </div>
@@ -1097,34 +1061,34 @@
   <!-- Audience Section -->
   <section class="audience">
     <div class="section-header">
-      <h2>Who Should Connect</h2>
+      <h2>Who We Work With</h2>
       <p>
-        If any of these sound like you, let's explore how DigiFab AI can add value to your operations.
+        If your team is exploring LLM adoption or struggling to move AI projects into production, we should talk.
       </p>
     </div>
     <div class="audience-grid">
       <div class="audience-card">
-        <div class="audience-card-icon"><i data-lucide="factory"></i></div>
-        <h3>Machine OEMs</h3>
-        <p>
-          Builders who want differentiated monitoring and AI options on their platforms without standing up 
-          a full internal ML research team.
-        </p>
-      </div>
-      <div class="audience-card">
         <div class="audience-card-icon"><i data-lucide="building-2"></i></div>
-        <h3>Tier 1 and Tier 2 Suppliers</h3>
+        <h3>Enterprise AI Teams</h3>
         <p>
-          Semiconductor, aerospace, energy, mobility, or industrial equipment suppliers who live with tight specs, increasing audit pressure, 
-          and the cost of scrap in high-mix environments.
+          Technical leaders and engineering teams building internal AI products who need expert guidance
+          on architecture, evaluation, and production readiness.
         </p>
       </div>
       <div class="audience-card">
-        <div class="audience-card-icon"><i data-lucide="flask-conical"></i></div>
-        <h3>R&D and Pilot Lines</h3>
+        <div class="audience-card-icon"><i data-lucide="lightbulb"></i></div>
+        <h3>Innovation & Strategy Leaders</h3>
         <p>
-          Teams running advanced materials, parameter development, or qualification campaigns that need richer 
-          process data and better tools for experimentation.
+          CTOs, VPs of Engineering, and AI leads evaluating LLM strategies who need a trusted partner
+          to cut through hype and build what actually works.
+        </p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-card-icon"><i data-lucide="cog"></i></div>
+        <h3>Operations-Heavy Industries</h3>
+        <p>
+          Organizations in logistics, insurance, healthcare, and supply chain that need AI agents
+          to automate complex, document-heavy workflows at scale.
         </p>
       </div>
     </div>
@@ -1133,10 +1097,10 @@
   <!-- CTA Section -->
   <section id="contact" class="cta-section">
     <div class="cta-box">
-      <h2>Ready to Transform Your Quality Control?</h2>
+      <h2>Ready to Build Production AI?</h2>
       <p>
-        DigiFab AI is currently working with a select group of manufacturing partners on pilot and early production deployments. 
-        Let's explore how AI copilots can integrate into your production line.
+        We work with a select number of enterprise clients at a time to ensure deep, focused engagement.
+        Let's explore how LLM and agentic AI systems can transform your operations.
       </p>
       
       <button id="revealBtn" class="btn btn-primary reveal-btn" onclick="revealContact()">Show Contact Options</button>
@@ -1184,9 +1148,9 @@
           </div>
           <div class="form-group">
             <label for="message">How can we help?</label>
-            <textarea id="message" name="message" placeholder="Briefly describe your use case, machines, and timeline." required></textarea>
+            <textarea id="message" name="message" placeholder="Tell us about your AI use case, team, and timeline." required></textarea>
           </div>
-          <input type="hidden" name="_subject" value="New DigiFab AI Contact Form Submission">
+          <input type="hidden" name="_subject" value="New DigiFab AI Inquiry — LLM & Agentic AI">
           <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
           <p class="form-note">
             Your message will be sent directly to our team. We'll get back to you within 24 hours.
@@ -1198,7 +1162,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 DigiFab AI • AI copilots for advanced manufacturing</p>
+    <p>© 2026 DigiFab AI • Enterprise LLM & Agentic AI Consulting</p>
     <p>Based in Vancouver, Washington • Collaborating worldwide</p>
   </footer>
 
