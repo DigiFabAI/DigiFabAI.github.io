@@ -394,13 +394,13 @@
     .features {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 80px 32px;
+      padding: 60px 32px;
     }
 
     .section-header {
       text-align: center;
       max-width: 800px;
-      margin: 0 auto 60px;
+      margin: 0 auto 40px;
     }
 
     .section-header h2 {
@@ -460,20 +460,20 @@
     .platform {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 80px 32px;
+      padding: 60px 32px;
     }
 
     .platform-inner {
       background: var(--dark-surface);
       border-radius: 24px;
-      padding: 60px 40px;
+      padding: 40px 32px;
     }
 
     .platform-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 32px;
-      margin-top: 50px;
+      margin-top: 32px;
     }
 
     .platform-step {
@@ -539,15 +539,15 @@
     .about {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 80px 32px;
+      padding: 60px 32px;
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 400px 1fr;
-      gap: 60px;
+      gap: 40px;
       align-items: center;
-      margin-top: 50px;
+      margin-top: 32px;
     }
 
     .about-image {
@@ -584,14 +584,14 @@
     .audience {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 80px 32px;
+      padding: 60px 32px;
     }
 
     .audience-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 32px;
-      margin-top: 50px;
+      margin-top: 32px;
     }
 
     .audience-card {
@@ -629,7 +629,7 @@
     .cta-section {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 80px 32px;
+      padding: 60px 32px;
       text-align: center;
     }
 
@@ -637,7 +637,7 @@
       background: #F5F7F5;
       border: 1px solid var(--border-color);
       border-radius: 24px;
-      padding: 80px 60px;
+      padding: 60px 40px;
       position: relative;
       overflow: hidden;
     }
@@ -790,14 +790,14 @@
     .courses {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 80px 32px;
+      padding: 60px 32px;
     }
 
     .courses-stats {
       display: flex;
       justify-content: center;
       gap: 48px;
-      margin-bottom: 50px;
+      margin-bottom: 32px;
       flex-wrap: wrap;
     }
 
@@ -887,7 +887,7 @@
     .case-studies {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 80px 32px;
+      padding: 60px 32px;
     }
 
     .case-studies-grid {
@@ -898,7 +898,7 @@
 
     .case-study-card {
       background: var(--dark-card);
-      padding: 40px;
+      padding: 32px;
       border-radius: 16px;
       border: 1px solid var(--border-color);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -912,6 +912,17 @@
       border-color: var(--green-primary);
       background: #F0FFF4;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .case-study-icon {
+      margin-bottom: 16px;
+    }
+
+    .case-study-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--green-primary);
+      stroke-width: 1.5;
     }
 
     .case-study-industry {
@@ -934,7 +945,7 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: var(--text-muted);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-weight: 600;
     }
 
@@ -942,7 +953,7 @@
       color: var(--text-secondary);
       font-size: 16px;
       line-height: 1.7;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
     .case-study-stack {
@@ -1264,6 +1275,7 @@
     </div>
     <div class="case-studies-grid">
       <div class="case-study-card">
+        <div class="case-study-icon"><i data-lucide="home"></i></div>
         <span class="case-study-industry">Real Estate / PropTech</span>
         <h3>Property Valuation RAG System</h3>
         <h4>Challenge</h4>
@@ -1285,6 +1297,7 @@
         </a>
       </div>
       <div class="case-study-card">
+        <div class="case-study-icon"><i data-lucide="cpu"></i></div>
         <span class="case-study-industry">Semiconductor / Manufacturing</span>
         <h3>Yield Optimization & Predictive Quality System</h3>
         <h4>Challenge</h4>
@@ -1306,6 +1319,7 @@
         </a>
       </div>
       <div class="case-study-card">
+        <div class="case-study-icon"><i data-lucide="shield-check"></i></div>
         <span class="case-study-industry">Financial Services / Banking</span>
         <h3>Regulatory Compliance LLM Agent</h3>
         <h4>Challenge</h4>
@@ -1327,6 +1341,7 @@
         </a>
       </div>
       <div class="case-study-card">
+        <div class="case-study-icon"><i data-lucide="graduation-cap"></i></div>
         <span class="case-study-industry">EdTech / AI Education</span>
         <h3>Personalized AI Learning Assistant</h3>
         <h4>Challenge</h4>
@@ -1348,6 +1363,7 @@
         </a>
       </div>
       <div class="case-study-card">
+        <div class="case-study-icon"><i data-lucide="heart-pulse"></i></div>
         <span class="case-study-industry">Healthcare / Life Sciences</span>
         <h3>Clinical Document Intelligence Platform</h3>
         <h4>Challenge</h4>
@@ -1369,6 +1385,7 @@
         </a>
       </div>
       <div class="case-study-card">
+        <div class="case-study-icon"><i data-lucide="search"></i></div>
         <span class="case-study-industry">Enterprise Technology</span>
         <h3>Internal Knowledge Base Agent</h3>
         <h4>Challenge</h4>
