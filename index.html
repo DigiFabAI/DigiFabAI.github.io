@@ -1406,30 +1406,43 @@
       position: relative;
       margin-bottom: 40px;
     }
+    .demo-carousel-label {
+      text-align: center;
+      margin-bottom: 16px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--green-primary);
+      min-height: 20px;
+      transition: opacity 0.3s;
+    }
     .demo-carousel {
       display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      gap: 24px;
-      padding: 8px 32px 24px;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      overflow: hidden;
+      padding: 8px 0 24px;
     }
-    .demo-carousel::-webkit-scrollbar { display: none; }
+    .demo-carousel-inner {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+    }
     .demo-slide {
-      flex: 0 0 min(560px, 85vw);
-      scroll-snap-align: center;
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 32px;
     }
     .demo-slide > * {
       margin: 0 !important;
-      max-width: none !important;
+      max-width: 600px !important;
       width: 100%;
     }
-    .demo-dots {
+    .demo-nav {
       display: flex;
       justify-content: center;
-      gap: 8px;
+      align-items: center;
+      gap: 12px;
       margin-top: 4px;
     }
     .demo-dot {
@@ -1446,6 +1459,25 @@
       background: var(--green-primary);
       transform: scale(1.3);
       box-shadow: 0 0 8px rgba(7,210,39,0.4);
+    }
+    .demo-arrow {
+      background: none;
+      border: 1.5px solid var(--border-color);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+    .demo-arrow:hover {
+      border-color: var(--green-primary);
+      color: var(--green-primary);
+      background: #E8F5E9;
     }
 
     @media (max-width: 768px) {
@@ -2310,9 +2342,11 @@
 
     <!-- Demo Carousel -->
     <div class="demo-carousel-wrapper">
+      <div class="demo-carousel-label" id="demoLabel">Real Estate / PropTech</div>
       <div class="demo-carousel" id="demoCarousel">
+        <div class="demo-carousel-inner" id="demoInner">
         <!-- 1. Chatbot -->
-        <div class="demo-slide">
+        <div class="demo-slide" data-industry="Real Estate / PropTech">
           <div class="chatbot-demo">
             <div class="chatbot-header"><div class="chatbot-dot"></div>DigiFab AI — RAG Demo</div>
             <div class="chatbot-messages" id="chatbotMessages">
@@ -2326,7 +2360,7 @@
           </div>
         </div>
         <!-- 2. Terminal -->
-        <div class="demo-slide">
+        <div class="demo-slide" data-industry="Logistics / Supply Chain">
           <div class="demo-terminal" id="demoTerminal">
             <div class="demo-terminal-header"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span>digifab-forecast — zsh</span></div>
             <div class="demo-terminal-body">
@@ -2341,7 +2375,7 @@
           </div>
         </div>
         <!-- 3. Dashboard -->
-        <div class="demo-slide">
+        <div class="demo-slide" data-industry="Insurance / Claims">
           <div class="demo-dashboard" id="demoDashboard">
             <div class="demo-dashboard-header"><div class="chatbot-dot"></div>Claims Processing — Live Dashboard</div>
             <div class="demo-dashboard-body">
@@ -2357,7 +2391,7 @@
           </div>
         </div>
         <!-- 4. Before/After -->
-        <div class="demo-slide">
+        <div class="demo-slide" data-industry="Legal / GovTech">
           <div class="demo-before-after">
             <div class="demo-ba-panel before">
               <h4>✕ Before — Manual Review</h4>
@@ -2376,7 +2410,7 @@
           </div>
         </div>
         <!-- 5. Workflow -->
-        <div class="demo-slide">
+        <div class="demo-slide" data-industry="Retail / E-commerce">
           <div class="demo-workflow" id="demoWorkflow">
             <div class="demo-workflow-title">AI-Powered Product Search Pipeline</div>
             <div class="demo-workflow-steps">
@@ -2393,7 +2427,7 @@
           </div>
         </div>
         <!-- 6. Alert -->
-        <div class="demo-slide">
+        <div class="demo-slide" data-industry="Energy / Utilities">
           <div class="demo-alert" id="demoAlert">
             <div class="demo-alert-header"><div class="alert-dot"></div>Anomaly Detected — Predictive Maintenance</div>
             <div class="demo-alert-body">
@@ -2412,8 +2446,13 @@
           </div>
         </div>
       </div>
-      <!-- Dots -->
-      <div class="demo-dots" id="demoDots"></div>
+      </div>
+      <!-- Nav -->
+      <div class="demo-nav">
+        <button class="demo-arrow" id="demoPrev" aria-label="Previous">‹</button>
+        <div id="demoDots" style="display:flex;gap:8px;"></div>
+        <button class="demo-arrow" id="demoNext" aria-label="Next">›</button>
+      </div>
     </div>
 
     <div class="case-studies-grid reveal-children">
@@ -3353,28 +3392,56 @@
       document.querySelectorAll('.case-study-card').forEach(el => metricObserver.observe(el));
     })();
 
-    // --- 7. Demo Carousel Dots ---
+    // --- 7. Demo Carousel ---
     (function() {
-      const carousel = document.getElementById('demoCarousel');
+      const inner = document.getElementById('demoInner');
       const dotsContainer = document.getElementById('demoDots');
-      if (!carousel || !dotsContainer) return;
-      const slides = carousel.querySelectorAll('.demo-slide');
-      slides.forEach((_, i) => {
-        const dot = document.createElement('button');
+      const label = document.getElementById('demoLabel');
+      const prevBtn = document.getElementById('demoPrev');
+      const nextBtn = document.getElementById('demoNext');
+      if (!inner) return;
+      const slides = inner.querySelectorAll('.demo-slide');
+      const total = slides.length;
+      let current = 0;
+      let autoTimer;
+
+      // Create dots
+      slides.forEach(function(_, i) {
+        var dot = document.createElement('button');
         dot.className = 'demo-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', 'Demo ' + (i + 1));
-        dot.addEventListener('click', () => {
-          slides[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        });
+        dot.addEventListener('click', function() { goTo(i); resetAuto(); });
         dotsContainer.appendChild(dot);
       });
-      const dots = dotsContainer.querySelectorAll('.demo-dot');
-      carousel.addEventListener('scroll', function() {
-        const scrollLeft = carousel.scrollLeft;
-        const slideWidth = slides[0].offsetWidth + 24;
-        const idx = Math.round(scrollLeft / slideWidth);
-        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-      });
+      var dots = dotsContainer.querySelectorAll('.demo-dot');
+
+      function goTo(idx) {
+        current = ((idx % total) + total) % total;
+        inner.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+        label.style.opacity = '0';
+        setTimeout(function() {
+          label.textContent = slides[current].dataset.industry;
+          label.style.opacity = '1';
+        }, 200);
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      prevBtn.addEventListener('click', function() { prev(); resetAuto(); });
+      nextBtn.addEventListener('click', function() { next(); resetAuto(); });
+
+      function resetAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(next, 5000);
+      }
+
+      // Auto-scroll every 5s
+      autoTimer = setInterval(next, 5000);
+
+      // Pause on hover
+      inner.parentElement.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+      inner.parentElement.addEventListener('mouseleave', function() { autoTimer = setInterval(next, 5000); });
     })();
 
     // --- 8. Terminal Demo Animation ---
