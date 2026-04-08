@@ -2542,7 +2542,7 @@
       const el = document.getElementById('typedText');
       if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const phrases = ['Agentic Workflows.', 'RAG Pipelines.', 'AI Strategy.', 'Production AI.'];
-      let phraseIdx = 0, charIdx = 0, isDeleting = false;
+      let phraseIdx = 0, charIdx = phrases[0].length, isDeleting = false;
 
       // Add cursor
       const cursor = document.createElement('span');
