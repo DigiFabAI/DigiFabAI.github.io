@@ -84,16 +84,18 @@
   
   <style>
     :root {
-      --green-primary: #1dce70;
+      --green-primary: #07d227;
       --green-bright: #07d227;
       --green-dark: #0f9d4f;
-      --dark-bg: #0a0f1e;
-      --dark-card: #111827;
-      --dark-surface: #1a1f2e;
-      --text-primary: #ffffff;
-      --text-secondary: #a0aec0;
-      --text-muted: #718096;
-      --border-color: rgba(255, 255, 255, 0.1);
+      --green-secondary: #1dce70;
+      --dark-bg: #FFFFFF;
+      --dark-card: #FFFFFF;
+      --dark-surface: #F5F7F5;
+      --text-primary: #20252D;
+      --text-secondary: rgba(32, 37, 45, 0.7);
+      --text-muted: rgba(32, 37, 45, 0.5);
+      --border-color: #E8F5E9;
+      --footer-bg: #091c11;
     }
 
     * {
@@ -107,7 +109,7 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: 'Aeonik Pro', 'Inter', sans-serif;
       background: var(--dark-bg);
       color: var(--text-primary);
       line-height: 1.6;
@@ -119,9 +121,10 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(10, 15, 30, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     }
 
     .header-container {
@@ -191,7 +194,7 @@
       display: block;
       width: 100%;
       height: 2px;
-      background: var(--text-primary);
+      background: #20252D;
       border-radius: 2px;
       transition: all 0.3s;
     }
@@ -202,8 +205,9 @@
       top: 72px;
       left: 0;
       right: 0;
-      background: var(--dark-bg);
+      background: #FFFFFF;
       border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       padding: 20px 32px;
       z-index: 999;
     }
@@ -245,19 +249,19 @@
 
     .btn-primary {
       background: var(--green-primary);
-      color: #000;
+      color: #FFFFFF;
     }
 
     .btn-primary:hover {
-      background: var(--green-bright);
+      background: var(--green-dark);
       transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(29, 206, 112, 0.4);
+      box-shadow: 0 8px 20px rgba(7, 210, 39, 0.3);
     }
 
     .btn-secondary {
       background: transparent;
       color: var(--text-primary);
-      border: 1px solid var(--border-color);
+      border: 1px solid rgba(32, 37, 45, 0.2);
     }
 
     .btn-secondary:hover {
@@ -281,10 +285,8 @@
       font-weight: 700;
       line-height: 1.1;
       margin-bottom: 24px;
-      background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--text-primary);
+      -webkit-text-fill-color: var(--text-primary);
     }
 
     .hero-content .highlight {
@@ -310,8 +312,8 @@
       align-items: center;
       gap: 8px;
       padding: 8px 16px;
-      background: rgba(29, 206, 112, 0.1);
-      border: 1px solid rgba(29, 206, 112, 0.3);
+      background: #E8F5E9;
+      border: 1px solid rgba(7, 210, 39, 0.3);
       border-radius: 24px;
       font-size: 14px;
       color: var(--green-primary);
@@ -339,7 +341,7 @@
       width: 100%;
       height: auto;
       border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
     }
 
     /* Trust Section */
@@ -431,13 +433,15 @@
       padding: 40px;
       border-radius: 16px;
       border: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       transition: all 0.3s;
     }
 
     .feature-card:hover {
       transform: translateY(-4px);
       border-color: var(--green-primary);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      background: #F0FFF4;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
     }
 
     .feature-card h3 {
@@ -491,7 +495,7 @@
     .step-number {
       width: 56px;
       height: 56px;
-      background: rgba(29, 206, 112, 0.1);
+      background: #E8F5E9;
       border: 2px solid var(--green-primary);
       border-radius: 50%;
       display: flex;
@@ -524,8 +528,8 @@
 
     .tag {
       padding: 6px 12px;
-      background: rgba(29, 206, 112, 0.1);
-      border: 1px solid rgba(29, 206, 112, 0.3);
+      background: #E8F5E9;
+      border: 1px solid rgba(7, 210, 39, 0.3);
       border-radius: 16px;
       font-size: 13px;
       color: var(--green-primary);
@@ -553,7 +557,7 @@
     .about-image img {
       width: 100%;
       border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
     }
 
     .about-content h3 {
@@ -595,6 +599,7 @@
       padding: 40px;
       border-radius: 16px;
       border: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .audience-card-icon {
@@ -629,8 +634,8 @@
     }
 
     .cta-box {
-      background: linear-gradient(135deg, rgba(29, 206, 112, 0.1), rgba(7, 210, 39, 0.05));
-      border: 1px solid var(--green-primary);
+      background: #F5F7F5;
+      border: 1px solid var(--border-color);
       border-radius: 24px;
       padding: 80px 60px;
       position: relative;
@@ -688,7 +693,7 @@
       gap: 8px;
       cursor: pointer;
       border: 2px solid var(--border-color);
-      background: var(--dark-card);
+      background: #FFFFFF;
       color: var(--text-primary);
     }
 
@@ -732,8 +737,8 @@
     .form-group textarea {
       width: 100%;
       padding: 12px 16px;
-      background: var(--dark-card);
-      border: 1px solid var(--border-color);
+      background: #FFFFFF;
+      border: 1px solid rgba(32, 37, 45, 0.15);
       border-radius: 8px;
       color: var(--text-primary);
       font-size: 15px;
@@ -827,6 +832,7 @@
       padding: 28px;
       border-radius: 16px;
       border: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       transition: all 0.3s;
       text-decoration: none;
       color: inherit;
@@ -836,7 +842,8 @@
     .course-card:hover {
       transform: translateY(-4px);
       border-color: var(--green-primary);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      background: #F0FFF4;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
     }
 
     .course-card h4 {
@@ -894,6 +901,7 @@
       padding: 40px;
       border-radius: 16px;
       border: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       transition: all 0.3s;
       display: flex;
       flex-direction: column;
@@ -902,7 +910,8 @@
     .case-study-card:hover {
       transform: translateY(-4px);
       border-color: var(--green-primary);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      background: #F0FFF4;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
     }
 
     .case-study-industry {
@@ -947,8 +956,8 @@
 
     .case-study-stack .tag {
       padding: 6px 12px;
-      background: rgba(29, 206, 112, 0.1);
-      border: 1px solid rgba(29, 206, 112, 0.3);
+      background: #E8F5E9;
+      border: 1px solid rgba(7, 210, 39, 0.3);
       border-radius: 16px;
       font-size: 13px;
       color: var(--green-primary);
@@ -970,12 +979,20 @@
       gap: 10px;
     }
 
+    /* Alternating section backgrounds */
+    .section-alt {
+      background: #F5F7F5;
+    }
+
     /* Footer */
+    .footer-wrapper {
+      background: var(--footer-bg);
+    }
+
     footer {
       max-width: 1280px;
       margin: 0 auto;
       padding: 60px 32px;
-      border-top: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -984,7 +1001,7 @@
     }
 
     footer p {
-      color: var(--text-muted);
+      color: rgba(255, 255, 255, 0.7);
       font-size: 14px;
     }
 
@@ -1198,7 +1215,7 @@
   </section>
 
   <!-- Industries Section -->
-  <section id="industries" class="features">
+  <section id="industries" class="features section-alt">
     <div class="section-header">
       <h2>Industries We Serve</h2>
       <p>
@@ -1375,7 +1392,7 @@
   </section>
 
   <!-- How We Work Section -->
-  <section id="process" class="platform">
+  <section id="process" class="platform section-alt">
     <div class="platform-inner">
       <div class="section-header">
         <h2>How We Work</h2>
@@ -1458,7 +1475,7 @@
   </section>
 
   <!-- Courses & Training Section -->
-  <section id="training" class="courses">
+  <section id="training" class="courses section-alt">
     <div class="section-header">
       <h2>Courses & Training</h2>
       <p>
@@ -1636,10 +1653,12 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2026 DigiFab AI • Enterprise LLM & Agentic AI Consulting</p>
-    <p>Based in Vancouver, Washington • Collaborating worldwide</p>
-  </footer>
+  <div class="footer-wrapper">
+    <footer>
+      <p>© 2026 DigiFab AI • Enterprise LLM & Agentic AI Consulting</p>
+      <p>Based in Vancouver, Washington • Collaborating worldwide</p>
+    </footer>
+  </div>
 
   <!-- Initialize Lucide Icons and Mobile Menu -->
   <script>
