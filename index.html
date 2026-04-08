@@ -2558,22 +2558,22 @@
           if (charIdx === 0) {
             isDeleting = false;
             phraseIdx = (phraseIdx + 1) % phrases.length;
-            setTimeout(type, 400);
+            setTimeout(type, 200);
             return;
           }
-          setTimeout(type, 40);
+          setTimeout(type, 25);
         } else {
           charIdx++;
           el.textContent = current.substring(0, charIdx);
           if (charIdx === current.length) {
-            setTimeout(function() { isDeleting = true; type(); }, 2000);
+            setTimeout(function() { isDeleting = true; type(); }, 1200);
             return;
           }
-          setTimeout(type, 80);
+          setTimeout(type, 55);
         }
       }
 
-      setTimeout(function() { isDeleting = true; type(); }, 3000);
+      setTimeout(function() { isDeleting = true; type(); }, 1500);
     })();
 
     // --- 4. Mouse-Follow Glow (Hero) ---
