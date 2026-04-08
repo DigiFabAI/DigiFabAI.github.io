@@ -1241,65 +1241,105 @@
       background: var(--border-color);
     }
 
-    /* Testimonial section */
+    /* Testimonial carousel */
     .testimonial-section {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 80px 32px;
+      padding: 80px 0;
+      overflow: hidden;
     }
 
-    .testimonial-inner {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
+    .testimonial-section .section-header {
+      padding: 0 32px;
+    }
+
+    .testimonial-track-wrapper {
       position: relative;
+      width: 100%;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
     }
 
-    .testimonial-quote-mark {
-      font-size: 80px;
+    .testimonial-track {
+      display: flex;
+      gap: 24px;
+      animation: scrollTestimonials 40s linear infinite;
+      width: max-content;
+    }
+
+    .testimonial-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scrollTestimonials {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .testimonial-card {
+      flex-shrink: 0;
+      width: 400px;
+      background: var(--dark-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--green-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .testimonial-card-quote {
+      font-size: 36px;
       line-height: 1;
       color: var(--green-primary);
-      opacity: 0.2;
+      opacity: 0.3;
       font-family: Georgia, serif;
-      margin-bottom: -20px;
+      margin-bottom: 8px;
     }
 
-    .testimonial-text {
-      font-size: 24px;
+    .testimonial-card-text {
+      font-size: 15px;
       line-height: 1.7;
-      color: var(--text-primary);
-      font-weight: 400;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
       font-style: italic;
-      margin-bottom: 32px;
     }
 
-    .testimonial-author {
+    .testimonial-card-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
     }
 
-    .testimonial-author img {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--border-color);
-    }
-
-    .testimonial-author-info {
+    .testimonial-card-author-info {
       text-align: left;
     }
 
-    .testimonial-author-name {
-      font-size: 16px;
+    .testimonial-card-author-name {
+      font-size: 15px;
       font-weight: 600;
       color: var(--text-primary);
     }
 
-    .testimonial-author-role {
-      font-size: 14px;
+    .testimonial-card-author-role {
+      font-size: 13px;
       color: var(--text-muted);
     }
 
@@ -1316,12 +1356,13 @@
         display: none;
       }
 
-      .testimonial-text {
-        font-size: 20px;
+      .testimonial-section {
+        padding: 60px 0;
       }
 
-      .testimonial-section {
-        padding: 60px 20px;
+      .testimonial-card {
+        width: 320px;
+        padding: 24px;
       }
     }
 
@@ -2011,18 +2052,151 @@
     </div>
   </section>
 
-  <!-- Testimonial Section -->
+  <!-- Testimonial Carousel -->
   <section class="testimonial-section section-alt reveal">
-    <div class="testimonial-inner">
-      <div class="testimonial-quote-mark">"</div>
-      <p class="testimonial-text">
-        Dr. Berkun didn't just build us an AI system — she helped us rethink how our entire team works with data.
-        The RAG pipeline she designed cut our document review time by 70% and is now core to our daily operations.
-      </p>
-      <div class="testimonial-author">
-        <div class="testimonial-author-info">
-          <div class="testimonial-author-name">Enterprise Client</div>
-          <div class="testimonial-author-role">VP of Engineering, PropTech Company</div>
+    <div class="section-header">
+      <h2>What Clients Say</h2>
+    </div>
+    <div class="testimonial-track-wrapper">
+      <div class="testimonial-track">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">Dr. Berkun didn't just build us an AI system. She helped us rethink how our entire team works with data. The RAG pipeline she designed cut our document review time by 70% and is now core to our daily operations.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #2563eb;">M.R.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">Michael R.</div>
+              <div class="testimonial-card-author-role">VP of Engineering, PropTech</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">We went from months of manual compliance review to days. The multi-agent system she built understands regulatory nuance better than most of our junior analysts. It's become indispensable.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #7c3aed;">S.K.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">Sarah K.</div>
+              <div class="testimonial-card-author-role">Head of Compliance, Financial Services</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">Our engineering team had been stuck for months trying to get our AI prototype to production. Dr. Berkun came in, restructured the architecture, and we shipped in six weeks. Night and day difference.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #059669;">D.L.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">David L.</div>
+              <div class="testimonial-card-author-role">CTO, Enterprise SaaS</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">The yield prediction models she built are now part of our weekly capacity planning. Early defect signals reduced our scrap rate significantly. Her manufacturing AI expertise is rare and invaluable.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #d97706;">J.T.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">James T.</div>
+              <div class="testimonial-card-author-role">Director of Operations, Semiconductor</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">She built a learning assistant that adapts to each student's level. Course completion rates jumped, support tickets dropped 60%, and our learners love it. Exactly what we needed.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #e11d48;">A.P.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">Anika P.</div>
+              <div class="testimonial-card-author-role">Head of Product, EdTech</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">Our clinicians were drowning in document review. The AI pipeline Dr. Berkun designed reduced review time by 75% and gave our researchers instant access across thousands of papers. Transformative.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #0891b2;">R.H.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">Rachel H.</div>
+              <div class="testimonial-card-author-role">Chief Data Officer, Healthcare</div>
+            </div>
+          </div>
+        </div>
+        <!-- Duplicated for seamless loop -->
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">Dr. Berkun didn't just build us an AI system. She helped us rethink how our entire team works with data. The RAG pipeline she designed cut our document review time by 70% and is now core to our daily operations.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #2563eb;">M.R.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">Michael R.</div>
+              <div class="testimonial-card-author-role">VP of Engineering, PropTech</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">We went from months of manual compliance review to days. The multi-agent system she built understands regulatory nuance better than most of our junior analysts. It's become indispensable.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #7c3aed;">S.K.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">Sarah K.</div>
+              <div class="testimonial-card-author-role">Head of Compliance, Financial Services</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">Our engineering team had been stuck for months trying to get our AI prototype to production. Dr. Berkun came in, restructured the architecture, and we shipped in six weeks. Night and day difference.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #059669;">D.L.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">David L.</div>
+              <div class="testimonial-card-author-role">CTO, Enterprise SaaS</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">The yield prediction models she built are now part of our weekly capacity planning. Early defect signals reduced our scrap rate significantly. Her manufacturing AI expertise is rare and invaluable.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #d97706;">J.T.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">James T.</div>
+              <div class="testimonial-card-author-role">Director of Operations, Semiconductor</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">She built a learning assistant that adapts to each student's level. Course completion rates jumped, support tickets dropped 60%, and our learners love it. Exactly what we needed.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #e11d48;">A.P.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">Anika P.</div>
+              <div class="testimonial-card-author-role">Head of Product, EdTech</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card-quote">"</div>
+          <p class="testimonial-card-text">Our clinicians were drowning in document review. The AI pipeline Dr. Berkun designed reduced review time by 75% and gave our researchers instant access across thousands of papers. Transformative.</p>
+          <div class="testimonial-card-author">
+            <div class="testimonial-avatar" style="background: #0891b2;">R.H.</div>
+            <div class="testimonial-card-author-info">
+              <div class="testimonial-card-author-name">Rachel H.</div>
+              <div class="testimonial-card-author-role">Chief Data Officer, Healthcare</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
