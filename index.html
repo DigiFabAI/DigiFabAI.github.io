@@ -1591,22 +1591,12 @@
       color: var(--green-primary);
       -webkit-text-fill-color: var(--green-primary);
       display: inline-block;
-      min-height: 1.2em;
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    .typed-cursor {
-      display: inline-block;
-      width: 3px;
-      height: 0.9em;
-      margin-left: 4px;
-      vertical-align: baseline;
-      background: var(--green-primary);
-      animation: cursorBlink 1s step-end infinite;
-    }
-
-    @keyframes cursorBlink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+    .typed-text.fade-out {
+      opacity: 0;
+      transform: translateY(8px);
     }
 
     /* How We Work timeline connectors */
@@ -1838,7 +1828,7 @@
       .bg-orb { animation: none; }
       .hero-content, .hero-image { animation: none; }
       #heroCanvas { display: none; }
-      .typed-cursor { animation: none; }
+      .typed-text { transition: none !important; }
       .platform-step::after { transform: scaleX(1) !important; transition: none !important; }
       .feature-card-icon svg { animation: none !important; }
       .hero-glow { display: none; }
@@ -2800,43 +2790,21 @@
       document.querySelectorAll('.courses-stats').forEach(el => counterObserver.observe(el));
     })();
 
-    // --- 3. Hero Typing Animation ---
+    // --- 3. Hero Text Swap Animation ---
     (function() {
       const el = document.getElementById('typedText');
       if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const phrases = ['Agentic Workflows.', 'RAG Pipelines.', 'AI Strategy.', 'Production AI.'];
-      let phraseIdx = 0, charIdx = phrases[0].length, isDeleting = false;
+      let idx = 0;
 
-      // Add cursor
-      const cursor = document.createElement('span');
-      cursor.className = 'typed-cursor';
-      cursor.innerHTML = '&nbsp;';
-      el.parentNode.insertBefore(cursor, el.nextSibling);
-
-      function type() {
-        const current = phrases[phraseIdx];
-        if (isDeleting) {
-          charIdx--;
-          el.textContent = current.substring(0, charIdx);
-          if (charIdx === 0) {
-            isDeleting = false;
-            phraseIdx = (phraseIdx + 1) % phrases.length;
-            setTimeout(type, 200);
-            return;
-          }
-          setTimeout(type, 25);
-        } else {
-          charIdx++;
-          el.textContent = current.substring(0, charIdx);
-          if (charIdx === current.length) {
-            setTimeout(function() { isDeleting = true; type(); }, 1200);
-            return;
-          }
-          setTimeout(type, 55);
-        }
-      }
-
-      setTimeout(function() { isDeleting = true; type(); }, 1500);
+      setInterval(function() {
+        el.classList.add('fade-out');
+        setTimeout(function() {
+          idx = (idx + 1) % phrases.length;
+          el.textContent = phrases[idx];
+          el.classList.remove('fade-out');
+        }, 400);
+      }, 2500);
     })();
 
     // --- 4. Chatbot Demo Animation ---
