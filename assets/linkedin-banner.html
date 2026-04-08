@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1584px;
+    height: 396px;
+    max-height: 396px;
+    overflow: hidden;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background: #edfcf2;
+    position: relative;
+  }
+
+  /* Grid */
+  body::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 1584px; height: 396px;
+    background-image:
+      linear-gradient(rgba(7,210,39,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(7,210,39,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .bottom-accent {
+    position: absolute;
+    bottom: 0; left: 0; width: 1584px; height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(7,210,39,0.4), transparent);
+    z-index: 3;
+  }
+
+  /* Everything centered */
+  .main {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1584px; height: 396px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    gap: 60px;
+    padding: 0 80px 0 300px;
+  }
+
+  /* Logo + tagline - BIG */
+  .center {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .center img { width: 100px; height: 100px; border-radius: 22px; }
+  .center-text {}
+  .logo-name { font-size: 90px; font-weight: 800; color: #20252D; letter-spacing: -3px; line-height: 1; }
+  .tagline { font-size: 28px; font-weight: 600; color: rgba(32,37,45,0.4); text-transform: uppercase; letter-spacing: 10px; margin-top: 4px; }
+
+  /* Right side - stats big */
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .stat-row { display: flex; align-items: baseline; gap: 16px; }
+  .stat-big { font-size: 64px; font-weight: 800; color: #07d227; line-height: 1; }
+  .stat-text { font-size: 22px; font-weight: 600; color: rgba(32,37,45,0.4); text-transform: uppercase; letter-spacing: 2px; }
+  .top-voice { font-size: 28px; font-weight: 800; color: #0077B5; }
+</style>
+</head>
+<body>
+  <div class="bottom-accent"></div>
+
+  <div class="main">
+    <div class="center">
+      <img src="logo-mark.png" alt="DigiFab AI">
+      <div class="center-text">
+        <div class="logo-name">DigiFab AI</div>
+        <div class="tagline">Your AI Team</div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="stat-row">
+        <span class="stat-big">380K+</span>
+        <span class="stat-text">Learners</span>
+      </div>
+      <div class="top-voice">LinkedIn Top Voice</div>
+    </div>
+  </div>
+</body>
+</html>
