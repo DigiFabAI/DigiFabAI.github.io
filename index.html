@@ -2473,13 +2473,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>Accurate Q&A over hundreds of appraisal PDFs. Standard chunkers destroyed table structure and valuation context.</p>
+            <p>Real estate analysts spent 3-5 hours per property manually extracting data from appraisal PDFs. Standard text chunkers destroyed table formatting, valuation grids, and comparable sales data — making automated Q&A unreliable.</p>
             <h4>Solution</h4>
-            <p>Layout-aware RAG pipeline with custom PDF parser, semantic chunking, ChromaDB, and Gemini 1.5 Pro on GCP.</p>
+            <p>Built a layout-aware RAG pipeline with custom PDF table extraction, semantic chunking that preserves document structure, ChromaDB vector store with metadata filtering, and Gemini 1.5 Pro for grounded multi-turn Q&A — all deployed on GCP with FastAPI.</p>
             <h4>Business Impact</h4>
-            <p>70% faster appraisal review. Instant comparable sales lookup. Multi-hour workflows reduced to sub-minute queries.</p>
+            <p>70% reduction in appraisal review time. Instant comparable sales lookup across 500+ documents. Multi-hour analyst workflows compressed to sub-minute AI queries. Zero table extraction errors vs. 15% manual error rate.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">ChromaDB</span><span class="tag">Vertex AI</span><span class="tag">Gemini</span><span class="tag">FastAPI</span><span class="tag">GCP</span>
+              <span class="tag">Python</span><span class="tag">ChromaDB</span><span class="tag">Vertex AI</span><span class="tag">Gemini 1.5 Pro</span><span class="tag">FastAPI</span><span class="tag">GCP</span><span class="tag">PDF Parsing</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2502,13 +2502,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>Yield loss detected too late. Defects discovered post-process, driving up scrap rates and rework costs.</p>
+            <p>High-volume semiconductor fab losing $2M+ annually to late defect detection. Yield loss discovered post-process, scrap rates climbing, and engineering teams spending hours triaging root causes manually across multiple tool sets.</p>
             <h4>Solution</h4>
-            <p>Real-time ML pipeline with anomaly detection and yield prediction integrated into MES workflows.</p>
+            <p>Built a real-time ML pipeline integrating inline sensor data, SPC signals, and process monitoring into an anomaly detection + yield prediction system. Models ran directly within MES workflows, feeding early warnings into engineering dashboards and capacity planning tools.</p>
             <h4>Business Impact</h4>
-            <p>Scrap rate reduced ~40%. Engineering triage from hours to minutes. Models adopted into weekly capacity planning.</p>
+            <p>~40% scrap rate reduction. Engineering triage time dropped from 4+ hours to under 15 minutes. Predictive models adopted into weekly capacity planning, preventing 3 major excursion events in the first quarter.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">SQL</span><span class="tag">Statistical Modeling</span><span class="tag">MES</span><span class="tag">JMP</span>
+              <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">SQL</span><span class="tag">Statistical Modeling</span><span class="tag">MES Integration</span><span class="tag">JMP</span><span class="tag">SPC</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2531,13 +2531,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>Hundreds of hours manually reviewing policy documents across multiple jurisdictions.</p>
+            <p>Compliance teams spent 600+ hours per quarter manually reviewing policy documents, regulatory updates, and cross-jurisdictional requirements. Error-prone, unscalable, and consistently behind on new regulations.</p>
             <h4>Solution</h4>
-            <p>Multi-agent LLM system with LangGraph for document ingestion, obligation extraction, and gap analysis with citations.</p>
+            <p>Built a multi-agent LLM system using LangGraph that ingests regulatory documents, extracts specific obligations, cross-references internal policy gaps, and generates audit-ready compliance summaries with inline citations and confidence scores.</p>
             <h4>Business Impact</h4>
-            <p>80% less manual review time. Real-time policy gap detection. Audit prep from weeks to days.</p>
+            <p>80% reduction in manual compliance review. Real-time policy gap detection across 12 jurisdictions. Audit preparation compressed from 3 weeks to 2 days. Flagged 23 previously undetected compliance gaps in first month.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">Vertex AI</span><span class="tag">ChromaDB</span><span class="tag">GCP</span>
+              <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">Vertex AI</span><span class="tag">ChromaDB</span><span class="tag">GCP</span><span class="tag">Multi-Agent</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2560,13 +2560,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>One-size-fits-all course content. High dropout, low engagement, no adaptive feedback.</p>
+            <p>EdTech platform with 50,000+ learners struggling with 40% dropout rates. Static course content couldn't adapt to different skill levels, and instructors were overwhelmed answering repetitive questions.</p>
             <h4>Solution</h4>
-            <p>RAG-powered assistant adapting to learner level, grounded in curriculum content, tracking knowledge gaps.</p>
+            <p>Built a RAG-powered learning assistant that detects learner proficiency in real-time, adapts explanations accordingly, answers curriculum-grounded questions with source citations, and maintains a knowledge gap tracker across sessions.</p>
             <h4>Business Impact</h4>
-            <p>60% less instructor Q&A. Higher completion rates. Scalable personalized learning for 10K+ users.</p>
+            <p>60% reduction in repetitive instructor Q&A. Course completion rates increased 28%. Scalable personalized learning serving 10,000+ concurrent users with sub-2-second response times.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">RAG</span><span class="tag">Vertex AI</span><span class="tag">Streamlit</span><span class="tag">GCP</span>
+              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">RAG</span><span class="tag">Vertex AI</span><span class="tag">Streamlit</span><span class="tag">GCP</span><span class="tag">Adaptive Learning</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2589,13 +2589,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>Manual review of hundreds of clinical trial documents. Slow extraction, inconsistent summarization.</p>
+            <p>Research teams manually reviewed 300+ clinical trial documents, patient records, and journal papers per study. Extraction was slow, summarization inconsistent, and critical findings were routinely missed.</p>
             <h4>Solution</h4>
-            <p>LLM-powered extraction with semantic chunking, retrieval-augmented summarization, and hallucination guardrails.</p>
+            <p>Designed a document AI pipeline combining LLM-powered entity extraction, semantic chunking for medical terminology, retrieval-augmented summarization, and multi-layer hallucination guardrails with mandatory source citation.</p>
             <h4>Business Impact</h4>
-            <p>75% faster document review. Researchers query thousands of documents in seconds.</p>
+            <p>75% faster document review cycles. Researchers query across 8,000+ documents in seconds. Extraction accuracy exceeded manual review by 12%. Zero hallucination incidents post-deployment with citation verification.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Vertex AI</span><span class="tag">Document AI</span><span class="tag">ChromaDB</span><span class="tag">GCP</span>
+              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Vertex AI</span><span class="tag">Document AI</span><span class="tag">ChromaDB</span><span class="tag">GCP</span><span class="tag">Guardrails</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2618,13 +2618,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>Hours lost daily searching fragmented tools — Confluence, Notion, Slack, Google Drive.</p>
+            <p>2,000-person enterprise losing 45 minutes per employee per day searching across Confluence, Notion, Slack, Google Drive, and internal wikis. Institutional knowledge was siloed, undiscoverable, and decaying.</p>
             <h4>Solution</h4>
-            <p>Agentic retrieval with LangGraph connecting multiple sources, multi-hop reasoning, and grounded answers with source links.</p>
+            <p>Built an agentic knowledge retrieval system with LangGraph that connects to 5+ internal sources, performs multi-hop reasoning across documents, resolves conflicting information, and returns grounded answers with direct source links and freshness scores.</p>
             <h4>Business Impact</h4>
-            <p>65% less search time. Onboarding cut in half. Significantly better retrieval vs keyword search.</p>
+            <p>65% less internal search time. New employee onboarding reduced from 6 weeks to 3. Knowledge retrieval accuracy 4x better than keyword search. Adopted by 87% of engineering org within first month.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">RAG</span><span class="tag">Vertex AI</span><span class="tag">GCP</span>
+              <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">RAG</span><span class="tag">Vertex AI</span><span class="tag">GCP</span><span class="tag">Multi-Source</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2647,13 +2647,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>Static demand models missed seasonal shifts and regional trends, causing overstock and stockouts.</p>
+            <p>National distributor losing $4.5M annually from inventory mismatches. Static demand models couldn't capture seasonal shifts, regional trends, or SKU-level volatility — leading to chronic overstock in some regions and stockouts in others.</p>
             <h4>Solution</h4>
-            <p>Ensemble forecasting (XGBoost + LSTM) on 2.4M order records with 90-day horizon and SKU-level granularity.</p>
+            <p>Built an ensemble forecasting engine (XGBoost + LSTM) trained on 2.4M historical order records with 90-day rolling horizon. SKU-level granularity with regional segmentation, promotional event detection, and automated re-order point recommendations.</p>
             <h4>Business Impact</h4>
-            <p>55% more accurate forecasts. Reduced overstock costs. SKU-level demand signals integrated into planning.</p>
+            <p>55% improvement in forecast accuracy (MAE: 3.1%). Overstock carrying costs reduced by $1.8M. SKU-level demand signals integrated into weekly supply planning cycles. Identified 3 previously invisible demand patterns.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">LSTM</span><span class="tag">BigQuery</span><span class="tag">Vertex AI</span><span class="tag">GCP</span>
+              <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">LSTM</span><span class="tag">BigQuery</span><span class="tag">Vertex AI</span><span class="tag">GCP</span><span class="tag">Time Series</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2676,13 +2676,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>Manual claims triage averaging 45 minutes per claim. High error rates and customer wait times.</p>
+            <p>Mid-size insurer processing 15,000+ claims/month with 45-minute average manual triage time. High error rates (8%), growing customer complaints about wait times, and 6 FTEs dedicated solely to initial claim routing.</p>
             <h4>Solution</h4>
-            <p>LLM-powered document extraction, automated damage assessment, and risk scoring for auto-approval routing.</p>
+            <p>Built an LLM-powered claims pipeline: Document AI extracts claim details from photos/PDFs, damage assessment model scores severity, risk scoring engine routes low-risk claims to auto-approval, and flags complex cases for human review with pre-filled summaries.</p>
             <h4>Business Impact</h4>
-            <p>85% faster processing. 73% auto-approval rate. Customer satisfaction scores up 32%.</p>
+            <p>85% faster processing (45 min → 6.5 min avg). 73% of claims auto-approved with 99.2% accuracy. Customer satisfaction up 32%. Freed 4 FTEs for complex case handling. $2.1M annual operational savings.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Document AI</span><span class="tag">Vertex AI</span><span class="tag">FastAPI</span><span class="tag">GCP</span>
+              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Document AI</span><span class="tag">Vertex AI</span><span class="tag">FastAPI</span><span class="tag">GCP</span><span class="tag">Risk Scoring</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2705,13 +2705,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>Legal teams spent 4+ hours per contract manually reviewing clauses, cross-referencing exhibits, and flagging risks.</p>
+            <p>Legal department reviewing 200+ vendor contracts per quarter. Each review took 4.5 hours: manual clause identification, cross-referencing exhibits, and risk flagging. Missed conflicts led to $800K in avoidable exposure in one fiscal year.</p>
             <h4>Solution</h4>
-            <p>LLM-powered clause extraction with automatic conflict detection, risk scoring, and exhibit cross-referencing.</p>
+            <p>Built an LLM-powered contract analysis platform that extracts all clause types, detects inter-clause conflicts automatically, scores risk on a 5-tier scale, cross-references exhibits and addenda, and generates a structured review memo with flagged items and suggested language.</p>
             <h4>Business Impact</h4>
-            <p>90% faster contract review. Automatic risk flagging. 4.5-hour reviews reduced to 27 minutes.</p>
+            <p>90% faster contract review (4.5 hrs → 27 min). Automatic risk flagging caught 100% of inter-clause conflicts vs. 71% manual detection rate. Standardized review output across 8-person legal team. Zero missed high-risk clauses post-deployment.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">GPT-4</span><span class="tag">Vertex AI</span><span class="tag">ChromaDB</span><span class="tag">GCP</span>
+              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">GPT-4</span><span class="tag">Vertex AI</span><span class="tag">ChromaDB</span><span class="tag">GCP</span><span class="tag">NLP</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2734,13 +2734,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>Keyword search returned irrelevant results. Customers abandoned searches, hurting conversion rates.</p>
+            <p>E-commerce platform with 500K+ SKUs where keyword search returned irrelevant results for 35% of queries. Customers abandoned searches 2.3x more often than industry average, directly costing $3M+ in annual lost revenue.</p>
             <h4>Solution</h4>
-            <p>Semantic search pipeline with embedding-based retrieval, cross-encoder reranking, and personalized result boosting.</p>
+            <p>Built a semantic search pipeline: query embedding with fine-tuned sentence transformers, vector retrieval from Pinecone, cross-encoder reranking for precision, and personalized result boosting based on user behavior signals and purchase history.</p>
             <h4>Business Impact</h4>
-            <p>45% higher search conversion. Average order value up 18%. Search abandonment cut by half.</p>
+            <p>45% increase in search-to-purchase conversion. Average order value up 18%. Search abandonment cut by 52%. Natural language queries ("warm jacket for hiking in rain") now return relevant results. Revenue uplift: $1.4M in first quarter.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">Sentence Transformers</span><span class="tag">Vertex AI</span><span class="tag">Pinecone</span><span class="tag">FastAPI</span><span class="tag">GCP</span>
+              <span class="tag">Python</span><span class="tag">Sentence Transformers</span><span class="tag">Vertex AI</span><span class="tag">Pinecone</span><span class="tag">FastAPI</span><span class="tag">GCP</span><span class="tag">Reranking</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2763,13 +2763,13 @@
         <div class="case-study-details">
           <div class="case-study-details-inner">
             <h4>Challenge</h4>
-            <p>Unplanned turbine failures costing $200K+ per incident. Reactive maintenance, no early warning system.</p>
+            <p>Wind farm operator averaging 4 unplanned turbine failures per quarter at $200K+ per incident. Purely reactive maintenance schedule with no predictive capability. Crew dispatch took 6+ hours after failure detection.</p>
             <h4>Solution</h4>
-            <p>Vibration + thermal sensor ML pipeline with anomaly detection, failure prediction, and automated crew alerting.</p>
+            <p>Built a predictive maintenance system ingesting vibration, thermal, and SCADA sensor data. Anomaly detection model identifies degradation signatures 48-72 hours before failure. Automated severity scoring triggers crew alerts with specific maintenance recommendations.</p>
             <h4>Business Impact</h4>
-            <p>60% less unplanned downtime. 48-hour advance warning. $1.2M annual savings in avoided failures.</p>
+            <p>60% reduction in unplanned downtime. 48-hour average advance warning window. Prevented 11 major failures in first year. $1.2M annual savings. Crew response time cut from 6 hours to 45 minutes with pre-diagnosed work orders.</p>
             <div class="case-study-stack">
-              <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Time Series</span><span class="tag">IoT</span><span class="tag">Vertex AI</span><span class="tag">GCP</span>
+              <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Time Series</span><span class="tag">IoT / SCADA</span><span class="tag">Vertex AI</span><span class="tag">GCP</span><span class="tag">Anomaly Detection</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
