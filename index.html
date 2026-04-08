@@ -1193,11 +1193,159 @@
       gap: 10px;
     }
 
+    /* Demo: Terminal */
+    .demo-terminal {
+      max-width: 560px;
+      margin: 0 auto 32px;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+    .demo-terminal-header {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 16px; background: #161b22;
+    }
+    .demo-terminal-header .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .demo-terminal-header .dot.r { background: #ff5f56; }
+    .demo-terminal-header .dot.y { background: #ffbd2e; }
+    .demo-terminal-header .dot.g { background: #27c93f; }
+    .demo-terminal-header span { margin-left: 8px; font-size: 12px; color: #8b949e; }
+    .demo-terminal-body { padding: 16px; min-height: 180px; }
+    .demo-terminal-body .line {
+      font-size: 13px; line-height: 1.6; color: #c9d1d9;
+      opacity: 0; transform: translateY(4px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .demo-terminal-body .line.visible { opacity: 1; transform: translateY(0); }
+    .demo-terminal-body .cmd { color: var(--green-primary); }
+    .demo-terminal-body .dim { color: #6e7681; }
+    .demo-terminal-body .val { color: #79c0ff; }
+
+    /* Demo: Dashboard */
+    .demo-dashboard {
+      max-width: 560px;
+      margin: 0 auto 32px;
+      background: var(--dark-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .demo-dashboard-header {
+      padding: 12px 20px; background: #091c11; color: #fff;
+      font-size: 14px; font-weight: 600;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .demo-dashboard-body { padding: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .dash-stat { text-align: center; }
+    .dash-stat-val { font-size: 22px; font-weight: 700; color: var(--text-primary); display: block; }
+    .dash-stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .demo-dashboard-bars { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 10px; }
+    .dash-bar-row { display: flex; align-items: center; gap: 10px; }
+    .dash-bar-label { font-size: 12px; color: var(--text-muted); width: 90px; flex-shrink: 0; }
+    .dash-bar-track { flex: 1; height: 8px; background: #E8F5E9; border-radius: 4px; overflow: hidden; }
+    .dash-bar-fill {
+      height: 100%; background: var(--green-primary); border-radius: 4px;
+      width: 0; transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .demo-dashboard.revealed .dash-bar-fill { width: var(--bar-w); }
+
+    /* Demo: Before/After */
+    .demo-before-after {
+      max-width: 560px;
+      margin: 0 auto 32px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .demo-ba-panel { padding: 20px; font-size: 13px; line-height: 1.7; }
+    .demo-ba-panel.before { background: #fff5f5; }
+    .demo-ba-panel.after { background: #f0fff4; }
+    .demo-ba-panel h4 {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 10px; font-weight: 700;
+    }
+    .demo-ba-panel.before h4 { color: #e53e3e; }
+    .demo-ba-panel.after h4 { color: var(--green-primary); }
+    .demo-ba-panel .hl-red { background: #fed7d7; padding: 1px 3px; border-radius: 3px; }
+    .demo-ba-panel .hl-green { background: #c6f6d5; padding: 1px 3px; border-radius: 3px; }
+
+    /* Demo: Workflow */
+    .demo-workflow {
+      max-width: 560px;
+      margin: 0 auto 32px;
+      background: var(--dark-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .demo-workflow-title {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--text-muted); font-weight: 600; margin-bottom: 16px; text-align: center;
+    }
+    .demo-workflow-steps {
+      display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap;
+    }
+    .wf-step {
+      padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 600;
+      background: #F5F7F5; color: var(--text-muted); border: 1px solid var(--border-color);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .wf-step.active { background: #E8F5E9; color: var(--green-primary); border-color: var(--green-primary); }
+    .wf-arrow { color: var(--text-muted); font-size: 14px; opacity: 0.4; }
+    .wf-arrow.active { opacity: 1; color: var(--green-primary); }
+
+    /* Demo: Alert */
+    .demo-alert {
+      max-width: 560px;
+      margin: 0 auto 32px;
+      background: var(--dark-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .demo-alert-header {
+      padding: 10px 20px; background: #7f1d1d; color: #fecaca;
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .demo-alert-header .alert-dot { width: 8px; height: 8px; border-radius: 50%; background: #f87171; animation: pulse 1.5s infinite; }
+    .demo-alert-body { padding: 20px; }
+    .demo-alert-body h4 { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+    .demo-alert-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+    .demo-alert-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .alert-badge {
+      padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;
+    }
+    .alert-badge.severity { background: #fef2f2; color: #dc2626; }
+    .alert-badge.confidence { background: #E8F5E9; color: var(--green-primary); }
+    .alert-badge.time { background: #eff6ff; color: #2563eb; }
+    .demo-alert-bar { margin-top: 12px; }
+    .demo-alert-bar-label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+    .demo-alert-bar-track { height: 6px; background: #E8F5E9; border-radius: 3px; overflow: hidden; }
+    .demo-alert-bar-fill {
+      height: 100%; width: 0; background: var(--green-primary); border-radius: 3px;
+      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .demo-alert.revealed .demo-alert-bar-fill { width: 94%; }
+
+    /* Demo grid for multiple demos */
+    .demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 24px; margin-bottom: 32px; }
+    .demo-grid > * { margin: 0; }
+
     @media (max-width: 768px) {
-      .chatbot-demo { margin: 0 auto 32px; }
+      .chatbot-demo, .demo-terminal, .demo-dashboard, .demo-workflow, .demo-alert { margin: 0 auto 24px; }
       .case-metric { width: 60px; height: 60px; }
       .case-metric svg { width: 60px; height: 60px; }
       .case-metric-label { font-size: 14px; }
+      .demo-before-after { grid-template-columns: 1fr; }
+      .demo-dashboard-body { grid-template-columns: 1fr; gap: 8px; }
+      .demo-grid { grid-template-columns: 1fr; }
     }
 
     /* Alternating section backgrounds */
@@ -2066,6 +2214,98 @@
       </div>
     </div>
 
+    <!-- Demo Grid: Terminal + Dashboard -->
+    <div class="demo-grid reveal">
+      <!-- Terminal Demo -->
+      <div class="demo-terminal" id="demoTerminal">
+        <div class="demo-terminal-header">
+          <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+          <span>digifab-forecast — zsh</span>
+        </div>
+        <div class="demo-terminal-body">
+          <div class="line" data-delay="600"><span class="cmd">$</span> digifab forecast --region=west --horizon=90d</div>
+          <div class="line" data-delay="1400"><span class="dim">Loading 2.4M order records...</span></div>
+          <div class="line" data-delay="2200"><span class="dim">Running ensemble model (XGBoost + LSTM)...</span></div>
+          <div class="line" data-delay="3200">Region: <span class="val">West Coast</span> | Q3 Demand: <span class="val">+18.4%</span></div>
+          <div class="line" data-delay="3800">Top SKU shift: <span class="val">SKU-4821</span> → <span class="val">+42% volume</span></div>
+          <div class="line" data-delay="4400">Confidence: <span class="val">94.2%</span> | MAE: <span class="val">3.1%</span></div>
+          <div class="line" data-delay="5000"><span class="cmd">✓</span> Forecast exported to supply-planning dashboard</div>
+        </div>
+      </div>
+      <!-- Dashboard Demo -->
+      <div class="demo-dashboard" id="demoDashboard">
+        <div class="demo-dashboard-header">
+          <div class="chatbot-dot"></div>
+          Claims Processing — Live Dashboard
+        </div>
+        <div class="demo-dashboard-body">
+          <div class="dash-stat"><span class="dash-stat-val">12,847</span><span class="dash-stat-label">Processed</span></div>
+          <div class="dash-stat"><span class="dash-stat-val">4.2 min</span><span class="dash-stat-label">Avg Time</span></div>
+          <div class="dash-stat"><span class="dash-stat-val">73%</span><span class="dash-stat-label">Auto-Approved</span></div>
+        </div>
+        <div class="demo-dashboard-bars">
+          <div class="dash-bar-row"><span class="dash-bar-label">Auto</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:73%"></div></div></div>
+          <div class="dash-bar-row"><span class="dash-bar-label">Manual Review</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:19%"></div></div></div>
+          <div class="dash-bar-row"><span class="dash-bar-label">Flagged</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:8%"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Before/After Demo -->
+    <div class="demo-before-after reveal">
+      <div class="demo-ba-panel before">
+        <h4>Before — Manual Review</h4>
+        <p><span class="hl-red">Clause 7.2(a)</span> — Indemnification scope <span class="hl-red">unclear</span>, manual cross-reference needed with Exhibit B...</p>
+        <p><span class="hl-red">Clause 12.1</span> — Termination notice period <span class="hl-red">conflicts</span> with Section 3.4 renewal terms...</p>
+        <p style="color:#e53e3e;font-size:12px;margin-top:8px;">⏱ ~4.5 hours per contract</p>
+      </div>
+      <div class="demo-ba-panel after">
+        <h4>After — AI-Extracted</h4>
+        <p><span class="hl-green">Clause 7.2(a)</span> — Indemnification: <span class="hl-green">capped at 2x annual fees</span>, cross-ref Exhibit B §3 confirmed ✓</p>
+        <p><span class="hl-green">Clause 12.1</span> — Termination: <span class="hl-green">90-day notice, auto-renew §3.4 aligned</span> ✓</p>
+        <p style="color:var(--green-primary);font-size:12px;margin-top:8px;">⚡ ~27 minutes per contract</p>
+      </div>
+    </div>
+
+    <!-- Demo Grid: Workflow + Alert -->
+    <div class="demo-grid reveal">
+      <!-- Workflow Demo -->
+      <div class="demo-workflow" id="demoWorkflow">
+        <div class="demo-workflow-title">AI-Powered Product Search Pipeline</div>
+        <div class="demo-workflow-steps">
+          <div class="wf-step" data-delay="400">Query</div>
+          <span class="wf-arrow" data-delay="700">→</span>
+          <div class="wf-step" data-delay="1000">Embedding</div>
+          <span class="wf-arrow" data-delay="1300">→</span>
+          <div class="wf-step" data-delay="1600">Vector Search</div>
+          <span class="wf-arrow" data-delay="1900">→</span>
+          <div class="wf-step" data-delay="2200">Rerank</div>
+          <span class="wf-arrow" data-delay="2500">→</span>
+          <div class="wf-step" data-delay="2800">Results</div>
+        </div>
+      </div>
+      <!-- Alert Demo -->
+      <div class="demo-alert" id="demoAlert">
+        <div class="demo-alert-header">
+          <div class="alert-dot"></div>
+          Anomaly Detected — Predictive Maintenance
+        </div>
+        <div class="demo-alert-body">
+          <h4>Turbine #7 — Vibration Pattern Anomaly</h4>
+          <p>Bearing degradation signature detected. Predicted failure window: 48-72 hours. Maintenance crew notified.</p>
+          <div class="demo-alert-meta">
+            <span class="alert-badge severity">High Severity</span>
+            <span class="alert-badge confidence">94% Confidence</span>
+            <span class="alert-badge time">48h Window</span>
+          </div>
+          <div class="demo-alert-bar">
+            <div class="demo-alert-bar-label">Model Confidence</div>
+            <div class="demo-alert-bar-track"><div class="demo-alert-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="case-studies-grid reveal-children">
       <!-- Card 1 -->
       <div class="case-study-card" onclick="toggleCaseStudy(this)">
@@ -2236,6 +2476,151 @@
             <p>65% less search time. Onboarding cut in half. Significantly better retrieval vs keyword search.</p>
             <div class="case-study-stack">
               <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">RAG</span><span class="tag">Vertex AI</span><span class="tag">GCP</span>
+            </div>
+            <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 7 -->
+      <div class="case-study-card" onclick="toggleCaseStudy(this)">
+        <div class="case-study-top">
+          <div>
+            <div class="case-study-icon"><i data-lucide="truck"></i></div>
+            <span class="case-study-industry">Logistics / Supply Chain</span>
+            <h3>Demand Forecasting Engine</h3>
+          </div>
+          <div class="case-metric" data-percent="55" style="--metric-offset: 84.83">
+            <svg viewBox="0 0 64 64"><circle class="metric-bg" cx="32" cy="32" r="30"/><circle class="metric-fill" cx="32" cy="32" r="30"/></svg>
+            <span class="case-metric-label">55%</span>
+          </div>
+        </div>
+        <span class="case-study-expand">Details <i data-lucide="chevron-down"></i></span>
+        <div class="case-study-details">
+          <div class="case-study-details-inner">
+            <h4>Challenge</h4>
+            <p>Static demand models missed seasonal shifts and regional trends, causing overstock and stockouts.</p>
+            <h4>Solution</h4>
+            <p>Ensemble forecasting (XGBoost + LSTM) on 2.4M order records with 90-day horizon and SKU-level granularity.</p>
+            <h4>Business Impact</h4>
+            <p>55% more accurate forecasts. Reduced overstock costs. SKU-level demand signals integrated into planning.</p>
+            <div class="case-study-stack">
+              <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">LSTM</span><span class="tag">BigQuery</span><span class="tag">Vertex AI</span><span class="tag">GCP</span>
+            </div>
+            <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 8 -->
+      <div class="case-study-card" onclick="toggleCaseStudy(this)">
+        <div class="case-study-top">
+          <div>
+            <div class="case-study-icon"><i data-lucide="file-check"></i></div>
+            <span class="case-study-industry">Insurance</span>
+            <h3>AI Claims Processing Pipeline</h3>
+          </div>
+          <div class="case-metric" data-percent="85" style="--metric-offset: 28.28">
+            <svg viewBox="0 0 64 64"><circle class="metric-bg" cx="32" cy="32" r="30"/><circle class="metric-fill" cx="32" cy="32" r="30"/></svg>
+            <span class="case-metric-label">85%</span>
+          </div>
+        </div>
+        <span class="case-study-expand">Details <i data-lucide="chevron-down"></i></span>
+        <div class="case-study-details">
+          <div class="case-study-details-inner">
+            <h4>Challenge</h4>
+            <p>Manual claims triage averaging 45 minutes per claim. High error rates and customer wait times.</p>
+            <h4>Solution</h4>
+            <p>LLM-powered document extraction, automated damage assessment, and risk scoring for auto-approval routing.</p>
+            <h4>Business Impact</h4>
+            <p>85% faster processing. 73% auto-approval rate. Customer satisfaction scores up 32%.</p>
+            <div class="case-study-stack">
+              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Document AI</span><span class="tag">Vertex AI</span><span class="tag">FastAPI</span><span class="tag">GCP</span>
+            </div>
+            <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 9 -->
+      <div class="case-study-card" onclick="toggleCaseStudy(this)">
+        <div class="case-study-top">
+          <div>
+            <div class="case-study-icon"><i data-lucide="scale"></i></div>
+            <span class="case-study-industry">Legal / GovTech</span>
+            <h3>AI Contract Analysis Platform</h3>
+          </div>
+          <div class="case-metric" data-percent="90" style="--metric-offset: 18.85">
+            <svg viewBox="0 0 64 64"><circle class="metric-bg" cx="32" cy="32" r="30"/><circle class="metric-fill" cx="32" cy="32" r="30"/></svg>
+            <span class="case-metric-label">90%</span>
+          </div>
+        </div>
+        <span class="case-study-expand">Details <i data-lucide="chevron-down"></i></span>
+        <div class="case-study-details">
+          <div class="case-study-details-inner">
+            <h4>Challenge</h4>
+            <p>Legal teams spent 4+ hours per contract manually reviewing clauses, cross-referencing exhibits, and flagging risks.</p>
+            <h4>Solution</h4>
+            <p>LLM-powered clause extraction with automatic conflict detection, risk scoring, and exhibit cross-referencing.</p>
+            <h4>Business Impact</h4>
+            <p>90% faster contract review. Automatic risk flagging. 4.5-hour reviews reduced to 27 minutes.</p>
+            <div class="case-study-stack">
+              <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">GPT-4</span><span class="tag">Vertex AI</span><span class="tag">ChromaDB</span><span class="tag">GCP</span>
+            </div>
+            <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 10 -->
+      <div class="case-study-card" onclick="toggleCaseStudy(this)">
+        <div class="case-study-top">
+          <div>
+            <div class="case-study-icon"><i data-lucide="shopping-cart"></i></div>
+            <span class="case-study-industry">Retail / E-commerce</span>
+            <h3>AI-Powered Product Search</h3>
+          </div>
+          <div class="case-metric" data-percent="45" style="--metric-offset: 103.68">
+            <svg viewBox="0 0 64 64"><circle class="metric-bg" cx="32" cy="32" r="30"/><circle class="metric-fill" cx="32" cy="32" r="30"/></svg>
+            <span class="case-metric-label">45%</span>
+          </div>
+        </div>
+        <span class="case-study-expand">Details <i data-lucide="chevron-down"></i></span>
+        <div class="case-study-details">
+          <div class="case-study-details-inner">
+            <h4>Challenge</h4>
+            <p>Keyword search returned irrelevant results. Customers abandoned searches, hurting conversion rates.</p>
+            <h4>Solution</h4>
+            <p>Semantic search pipeline with embedding-based retrieval, cross-encoder reranking, and personalized result boosting.</p>
+            <h4>Business Impact</h4>
+            <p>45% higher search conversion. Average order value up 18%. Search abandonment cut by half.</p>
+            <div class="case-study-stack">
+              <span class="tag">Python</span><span class="tag">Sentence Transformers</span><span class="tag">Vertex AI</span><span class="tag">Pinecone</span><span class="tag">FastAPI</span><span class="tag">GCP</span>
+            </div>
+            <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 11 -->
+      <div class="case-study-card" onclick="toggleCaseStudy(this)">
+        <div class="case-study-top">
+          <div>
+            <div class="case-study-icon"><i data-lucide="zap"></i></div>
+            <span class="case-study-industry">Energy / Utilities</span>
+            <h3>Predictive Maintenance System</h3>
+          </div>
+          <div class="case-metric" data-percent="60" style="--metric-offset: 75.4">
+            <svg viewBox="0 0 64 64"><circle class="metric-bg" cx="32" cy="32" r="30"/><circle class="metric-fill" cx="32" cy="32" r="30"/></svg>
+            <span class="case-metric-label">60%</span>
+          </div>
+        </div>
+        <span class="case-study-expand">Details <i data-lucide="chevron-down"></i></span>
+        <div class="case-study-details">
+          <div class="case-study-details-inner">
+            <h4>Challenge</h4>
+            <p>Unplanned turbine failures costing $200K+ per incident. Reactive maintenance, no early warning system.</p>
+            <h4>Solution</h4>
+            <p>Vibration + thermal sensor ML pipeline with anomaly detection, failure prediction, and automated crew alerting.</p>
+            <h4>Business Impact</h4>
+            <p>60% less unplanned downtime. 48-hour advance warning. $1.2M annual savings in avoided failures.</p>
+            <div class="case-study-stack">
+              <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Time Series</span><span class="tag">IoT</span><span class="tag">Vertex AI</span><span class="tag">GCP</span>
             </div>
             <a href="https://calendly.com/berkunis-digifab" target="_blank" class="case-study-link">Book a Consultation <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
           </div>
@@ -2858,7 +3243,67 @@
       document.querySelectorAll('.case-study-card').forEach(el => metricObserver.observe(el));
     })();
 
-    // --- 7. Mouse-Follow Glow (Hero) ---
+    // --- 7. Terminal Demo Animation ---
+    (function() {
+      const terminal = document.getElementById('demoTerminal');
+      if (!terminal) return;
+      let started = false;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !started) {
+            started = true;
+            terminal.querySelectorAll('.line[data-delay]').forEach(line => {
+              setTimeout(() => line.classList.add('visible'), parseInt(line.dataset.delay));
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(terminal);
+    })();
+
+    // --- 8. Dashboard Demo Animation ---
+    (function() {
+      const dash = document.getElementById('demoDashboard');
+      if (!dash) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { dash.classList.add('revealed'); }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(dash);
+    })();
+
+    // --- 9. Workflow Demo Animation ---
+    (function() {
+      const wf = document.getElementById('demoWorkflow');
+      if (!wf) return;
+      let started = false;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !started) {
+            started = true;
+            wf.querySelectorAll('[data-delay]').forEach(el => {
+              setTimeout(() => el.classList.add('active'), parseInt(el.dataset.delay));
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(wf);
+    })();
+
+    // --- 10. Alert Demo Animation ---
+    (function() {
+      const alert = document.getElementById('demoAlert');
+      if (!alert) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { alert.classList.add('revealed'); }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(alert);
+    })();
+
+    // --- 11. Mouse-Follow Glow (Hero) ---
     (function() {
       const hero = document.querySelector('.hero');
       const glow = document.getElementById('heroGlow');
