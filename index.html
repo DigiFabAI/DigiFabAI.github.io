@@ -1401,19 +1401,61 @@
     }
     .demo-alert.revealed .demo-alert-bar-fill { width: 94%; }
 
-    /* Demo grid */
-    .demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 28px; margin-bottom: 36px; }
-    .demo-grid > * { margin: 0; }
+    /* Demo carousel */
+    .demo-carousel-wrapper {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .demo-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      gap: 24px;
+      padding: 8px 32px 24px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .demo-carousel::-webkit-scrollbar { display: none; }
+    .demo-slide {
+      flex: 0 0 min(560px, 85vw);
+      scroll-snap-align: center;
+    }
+    .demo-slide > * {
+      margin: 0 !important;
+      max-width: none !important;
+      width: 100%;
+    }
+    .demo-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .demo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border-color);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .demo-dot.active {
+      background: var(--green-primary);
+      transform: scale(1.3);
+      box-shadow: 0 0 8px rgba(7,210,39,0.4);
+    }
 
     @media (max-width: 768px) {
-      .chatbot-demo, .demo-terminal, .demo-dashboard, .demo-workflow, .demo-alert { margin: 0 auto 24px; }
       .case-metric { width: 60px; height: 60px; }
       .case-metric svg { width: 60px; height: 60px; }
       .case-metric-label { font-size: 14px; }
       .demo-before-after { grid-template-columns: 1fr; }
       .demo-ba-panel.before { border-right: none; border-bottom: 1px solid #e2e8f0; }
       .demo-dashboard-body { grid-template-columns: 1fr; gap: 8px; }
-      .demo-grid { grid-template-columns: 1fr; }
+      .demo-carousel { padding: 8px 16px 24px; }
     }
 
     /* Alternating section backgrounds */
@@ -2266,114 +2308,112 @@
       <p>Real-world AI systems we've designed and built for enterprise clients.</p>
     </div>
 
-    <!-- Chatbot Demo -->
-    <div class="chatbot-demo reveal">
-      <div class="chatbot-header">
-        <div class="chatbot-dot"></div>
-        DigiFab AI — RAG Demo
-      </div>
-      <div class="chatbot-messages" id="chatbotMessages">
-        <div class="chat-msg user" data-delay="800">What was the average sale price for 3-bed homes in Austin in Q4?</div>
-        <div class="chat-typing" data-delay="1600"><span></span><span></span><span></span></div>
-        <div class="chat-msg ai" data-delay="3200">Based on 847 appraisal records, the average sale price for 3-bedroom homes in Austin during Q4 2025 was <strong>$412,300</strong>, a 6.2% increase from Q3.<br><span class="source-tag">Sources: appraisal-Q4-2025.pdf, pages 12-18</span></div>
-        <div class="chat-msg user" data-delay="5000">How does that compare to the Zillow estimate?</div>
-        <div class="chat-typing" data-delay="5800"><span></span><span></span><span></span></div>
-        <div class="chat-msg ai" data-delay="7400">The Zillow Zestimate for this cohort averaged $398,500 — <strong>3.3% below</strong> the appraisal-based valuation. The gap is consistent with the undervaluation pattern noted in comparable markets.<br><span class="source-tag">Sources: zillow-comp-analysis.pdf, page 4</span></div>
-      </div>
-    </div>
-
-    <!-- Demo Grid: Terminal + Dashboard -->
-    <div class="demo-grid reveal">
-      <!-- Terminal Demo -->
-      <div class="demo-terminal" id="demoTerminal">
-        <div class="demo-terminal-header">
-          <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-          <span>digifab-forecast — zsh</span>
-        </div>
-        <div class="demo-terminal-body">
-          <div class="line" data-delay="600"><span class="cmd">$</span> digifab forecast --region=west --horizon=90d</div>
-          <div class="line" data-delay="1400"><span class="dim">Loading 2.4M order records...</span></div>
-          <div class="line" data-delay="2200"><span class="dim">Running ensemble model (XGBoost + LSTM)...</span></div>
-          <div class="line" data-delay="3200">Region: <span class="val">West Coast</span> | Q3 Demand: <span class="val">+18.4%</span></div>
-          <div class="line" data-delay="3800">Top SKU shift: <span class="val">SKU-4821</span> → <span class="val">+42% volume</span></div>
-          <div class="line" data-delay="4400">Confidence: <span class="val">94.2%</span> | MAE: <span class="val">3.1%</span></div>
-          <div class="line" data-delay="5000"><span class="cmd">✓</span> Forecast exported to supply-planning dashboard</div>
-        </div>
-      </div>
-      <!-- Dashboard Demo -->
-      <div class="demo-dashboard" id="demoDashboard">
-        <div class="demo-dashboard-header">
-          <div class="chatbot-dot"></div>
-          Claims Processing — Live Dashboard
-        </div>
-        <div class="demo-dashboard-body">
-          <div class="dash-stat"><span class="dash-stat-val">12,847</span><span class="dash-stat-label">Processed</span></div>
-          <div class="dash-stat"><span class="dash-stat-val">4.2 min</span><span class="dash-stat-label">Avg Time</span></div>
-          <div class="dash-stat"><span class="dash-stat-val">73%</span><span class="dash-stat-label">Auto-Approved</span></div>
-        </div>
-        <div class="demo-dashboard-bars">
-          <div class="dash-bar-row"><span class="dash-bar-label">Auto-Approved</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:73%"></div></div><span class="dash-bar-pct">73%</span></div>
-          <div class="dash-bar-row"><span class="dash-bar-label">Manual Review</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:19%"></div></div><span class="dash-bar-pct">19%</span></div>
-          <div class="dash-bar-row"><span class="dash-bar-label">Flagged / Fraud</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:8%"></div></div><span class="dash-bar-pct">8%</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Before/After Demo -->
-    <div class="demo-before-after reveal">
-      <div class="demo-ba-panel before">
-        <h4>✕ Before — Manual Review</h4>
-        <p><span class="hl-red">Clause 7.2(a)</span> — Indemnification scope <span class="hl-red">unclear</span>, manual cross-reference needed with Exhibit B...</p>
-        <p><span class="hl-red">Clause 12.1</span> — Termination notice period <span class="hl-red">conflicts</span> with Section 3.4 renewal terms...</p>
-        <p><span class="hl-red">Clause 15.3</span> — Data retention clause <span class="hl-red">missing</span> GDPR compliance language...</p>
-        <span class="ba-time">⏱ ~4.5 hours per contract</span>
-      </div>
-      <div class="demo-ba-panel after">
-        <h4>✓ After — AI-Extracted</h4>
-        <p><span class="hl-green">Clause 7.2(a)</span> — Indemnification: <span class="hl-green">capped at 2x annual fees</span>, Exhibit B §3 confirmed ✓</p>
-        <p><span class="hl-green">Clause 12.1</span> — Termination: <span class="hl-green">90-day notice</span>, auto-renew §3.4 aligned ✓</p>
-        <p><span class="hl-green">Clause 15.3</span> — Data retention: <span class="hl-green">GDPR Art.17 compliant</span>, DPA cross-ref ✓</p>
-        <span class="ba-time">⚡ ~27 minutes per contract</span>
-      </div>
-    </div>
-
-    <!-- Demo Grid: Workflow + Alert -->
-    <div class="demo-grid reveal">
-      <!-- Workflow Demo -->
-      <div class="demo-workflow" id="demoWorkflow">
-        <div class="demo-workflow-title">AI-Powered Product Search Pipeline</div>
-        <div class="demo-workflow-steps">
-          <div class="wf-step" data-delay="400">Query</div>
-          <span class="wf-arrow" data-delay="700">→</span>
-          <div class="wf-step" data-delay="1000">Embedding</div>
-          <span class="wf-arrow" data-delay="1300">→</span>
-          <div class="wf-step" data-delay="1600">Vector Search</div>
-          <span class="wf-arrow" data-delay="1900">→</span>
-          <div class="wf-step" data-delay="2200">Rerank</div>
-          <span class="wf-arrow" data-delay="2500">→</span>
-          <div class="wf-step" data-delay="2800">Results</div>
-        </div>
-      </div>
-      <!-- Alert Demo -->
-      <div class="demo-alert" id="demoAlert">
-        <div class="demo-alert-header">
-          <div class="alert-dot"></div>
-          Anomaly Detected — Predictive Maintenance
-        </div>
-        <div class="demo-alert-body">
-          <h4>Turbine #7 — Vibration Pattern Anomaly</h4>
-          <p>Bearing degradation signature detected. Predicted failure window: 48-72 hours. Maintenance crew notified.</p>
-          <div class="demo-alert-meta">
-            <span class="alert-badge severity">High Severity</span>
-            <span class="alert-badge confidence">94% Confidence</span>
-            <span class="alert-badge time">48h Window</span>
+    <!-- Demo Carousel -->
+    <div class="demo-carousel-wrapper">
+      <div class="demo-carousel" id="demoCarousel">
+        <!-- 1. Chatbot -->
+        <div class="demo-slide">
+          <div class="chatbot-demo">
+            <div class="chatbot-header"><div class="chatbot-dot"></div>DigiFab AI — RAG Demo</div>
+            <div class="chatbot-messages" id="chatbotMessages">
+              <div class="chat-msg user" data-delay="800">What was the average sale price for 3-bed homes in Austin in Q4?</div>
+              <div class="chat-typing" data-delay="1600"><span></span><span></span><span></span></div>
+              <div class="chat-msg ai" data-delay="3200">Based on 847 appraisal records, the average sale price for 3-bedroom homes in Austin during Q4 2025 was <strong>$412,300</strong>, a 6.2% increase from Q3.<br><span class="source-tag">Sources: appraisal-Q4-2025.pdf, pages 12-18</span></div>
+              <div class="chat-msg user" data-delay="5000">How does that compare to the Zillow estimate?</div>
+              <div class="chat-typing" data-delay="5800"><span></span><span></span><span></span></div>
+              <div class="chat-msg ai" data-delay="7400">The Zillow Zestimate for this cohort averaged $398,500 — <strong>3.3% below</strong> the appraisal-based valuation. The gap is consistent with the undervaluation pattern noted in comparable markets.<br><span class="source-tag">Sources: zillow-comp-analysis.pdf, page 4</span></div>
+            </div>
           </div>
-          <div class="demo-alert-bar">
-            <div class="demo-alert-bar-label">Model Confidence</div>
-            <div class="demo-alert-bar-track"><div class="demo-alert-bar-fill"></div></div>
+        </div>
+        <!-- 2. Terminal -->
+        <div class="demo-slide">
+          <div class="demo-terminal" id="demoTerminal">
+            <div class="demo-terminal-header"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span>digifab-forecast — zsh</span></div>
+            <div class="demo-terminal-body">
+              <div class="line" data-delay="600"><span class="cmd">$</span> digifab forecast --region=west --horizon=90d</div>
+              <div class="line" data-delay="1400"><span class="dim">Loading 2.4M order records...</span></div>
+              <div class="line" data-delay="2200"><span class="dim">Running ensemble model (XGBoost + LSTM)...</span></div>
+              <div class="line" data-delay="3200">Region: <span class="val">West Coast</span> | Q3 Demand: <span class="val">+18.4%</span></div>
+              <div class="line" data-delay="3800">Top SKU shift: <span class="val">SKU-4821</span> → <span class="val">+42% volume</span></div>
+              <div class="line" data-delay="4400">Confidence: <span class="val">94.2%</span> | MAE: <span class="val">3.1%</span></div>
+              <div class="line" data-delay="5000"><span class="cmd">✓</span> Forecast exported to supply-planning dashboard</div>
+            </div>
+          </div>
+        </div>
+        <!-- 3. Dashboard -->
+        <div class="demo-slide">
+          <div class="demo-dashboard" id="demoDashboard">
+            <div class="demo-dashboard-header"><div class="chatbot-dot"></div>Claims Processing — Live Dashboard</div>
+            <div class="demo-dashboard-body">
+              <div class="dash-stat"><span class="dash-stat-val">12,847</span><span class="dash-stat-label">Processed</span></div>
+              <div class="dash-stat"><span class="dash-stat-val">4.2 min</span><span class="dash-stat-label">Avg Time</span></div>
+              <div class="dash-stat"><span class="dash-stat-val">73%</span><span class="dash-stat-label">Auto-Approved</span></div>
+            </div>
+            <div class="demo-dashboard-bars">
+              <div class="dash-bar-row"><span class="dash-bar-label">Auto-Approved</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:73%"></div></div><span class="dash-bar-pct">73%</span></div>
+              <div class="dash-bar-row"><span class="dash-bar-label">Manual Review</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:19%"></div></div><span class="dash-bar-pct">19%</span></div>
+              <div class="dash-bar-row"><span class="dash-bar-label">Flagged / Fraud</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:8%"></div></div><span class="dash-bar-pct">8%</span></div>
+            </div>
+          </div>
+        </div>
+        <!-- 4. Before/After -->
+        <div class="demo-slide">
+          <div class="demo-before-after">
+            <div class="demo-ba-panel before">
+              <h4>✕ Before — Manual Review</h4>
+              <p><span class="hl-red">Clause 7.2(a)</span> — Indemnification scope <span class="hl-red">unclear</span>, manual cross-reference needed with Exhibit B...</p>
+              <p><span class="hl-red">Clause 12.1</span> — Termination notice period <span class="hl-red">conflicts</span> with Section 3.4 renewal terms...</p>
+              <p><span class="hl-red">Clause 15.3</span> — Data retention clause <span class="hl-red">missing</span> GDPR compliance language...</p>
+              <span class="ba-time">⏱ ~4.5 hours per contract</span>
+            </div>
+            <div class="demo-ba-panel after">
+              <h4>✓ After — AI-Extracted</h4>
+              <p><span class="hl-green">Clause 7.2(a)</span> — Indemnification: <span class="hl-green">capped at 2x annual fees</span>, Exhibit B §3 confirmed ✓</p>
+              <p><span class="hl-green">Clause 12.1</span> — Termination: <span class="hl-green">90-day notice</span>, auto-renew §3.4 aligned ✓</p>
+              <p><span class="hl-green">Clause 15.3</span> — Data retention: <span class="hl-green">GDPR Art.17 compliant</span>, DPA cross-ref ✓</p>
+              <span class="ba-time">⚡ ~27 minutes per contract</span>
+            </div>
+          </div>
+        </div>
+        <!-- 5. Workflow -->
+        <div class="demo-slide">
+          <div class="demo-workflow" id="demoWorkflow">
+            <div class="demo-workflow-title">AI-Powered Product Search Pipeline</div>
+            <div class="demo-workflow-steps">
+              <div class="wf-step" data-delay="400">Query</div>
+              <span class="wf-arrow" data-delay="700">→</span>
+              <div class="wf-step" data-delay="1000">Embedding</div>
+              <span class="wf-arrow" data-delay="1300">→</span>
+              <div class="wf-step" data-delay="1600">Vector Search</div>
+              <span class="wf-arrow" data-delay="1900">→</span>
+              <div class="wf-step" data-delay="2200">Rerank</div>
+              <span class="wf-arrow" data-delay="2500">→</span>
+              <div class="wf-step" data-delay="2800">Results</div>
+            </div>
+          </div>
+        </div>
+        <!-- 6. Alert -->
+        <div class="demo-slide">
+          <div class="demo-alert" id="demoAlert">
+            <div class="demo-alert-header"><div class="alert-dot"></div>Anomaly Detected — Predictive Maintenance</div>
+            <div class="demo-alert-body">
+              <h4>Turbine #7 — Vibration Pattern Anomaly</h4>
+              <p>Bearing degradation signature detected. Predicted failure window: 48-72 hours. Maintenance crew notified.</p>
+              <div class="demo-alert-meta">
+                <span class="alert-badge severity">High Severity</span>
+                <span class="alert-badge confidence">94% Confidence</span>
+                <span class="alert-badge time">48h Window</span>
+              </div>
+              <div class="demo-alert-bar">
+                <div class="demo-alert-bar-label">Model Confidence</div>
+                <div class="demo-alert-bar-track"><div class="demo-alert-bar-fill"></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <!-- Dots -->
+      <div class="demo-dots" id="demoDots"></div>
     </div>
 
     <div class="case-studies-grid reveal-children">
@@ -3313,7 +3353,31 @@
       document.querySelectorAll('.case-study-card').forEach(el => metricObserver.observe(el));
     })();
 
-    // --- 7. Terminal Demo Animation ---
+    // --- 7. Demo Carousel Dots ---
+    (function() {
+      const carousel = document.getElementById('demoCarousel');
+      const dotsContainer = document.getElementById('demoDots');
+      if (!carousel || !dotsContainer) return;
+      const slides = carousel.querySelectorAll('.demo-slide');
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'demo-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Demo ' + (i + 1));
+        dot.addEventListener('click', () => {
+          slides[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        });
+        dotsContainer.appendChild(dot);
+      });
+      const dots = dotsContainer.querySelectorAll('.demo-dot');
+      carousel.addEventListener('scroll', function() {
+        const scrollLeft = carousel.scrollLeft;
+        const slideWidth = slides[0].offsetWidth + 24;
+        const idx = Math.round(scrollLeft / slideWidth);
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      });
+    })();
+
+    // --- 8. Terminal Demo Animation ---
     (function() {
       const terminal = document.getElementById('demoTerminal');
       if (!terminal) return;
@@ -3331,7 +3395,7 @@
       obs.observe(terminal);
     })();
 
-    // --- 8. Dashboard Demo Animation ---
+    // --- 9. Dashboard Demo Animation ---
     (function() {
       const dash = document.getElementById('demoDashboard');
       if (!dash) return;
@@ -3343,7 +3407,7 @@
       obs.observe(dash);
     })();
 
-    // --- 9. Workflow Demo Animation ---
+    // --- 10. Workflow Demo Animation ---
     (function() {
       const wf = document.getElementById('demoWorkflow');
       if (!wf) return;
@@ -3361,7 +3425,7 @@
       obs.observe(wf);
     })();
 
-    // --- 10. Alert Demo Animation ---
+    // --- 11. Alert Demo Animation ---
     (function() {
       const alert = document.getElementById('demoAlert');
       if (!alert) return;
@@ -3373,7 +3437,7 @@
       obs.observe(alert);
     })();
 
-    // --- 11. Mouse-Follow Glow (Hero) ---
+    // --- 12. Mouse-Follow Glow (Hero) ---
     (function() {
       const hero = document.querySelector('.hero');
       const glow = document.getElementById('heroGlow');
