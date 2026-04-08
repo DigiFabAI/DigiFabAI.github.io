@@ -1590,7 +1590,9 @@
     .typed-text {
       color: var(--green-primary);
       -webkit-text-fill-color: var(--green-primary);
-      display: inline-block;
+      display: block;
+      height: 1.1em;
+      overflow: hidden;
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
@@ -1920,7 +1922,7 @@
     <div class="hero-glow" id="heroGlow"></div>
     <div class="hero-content">
       <h1>
-        <span class="highlight">LLM Systems.</span><br><span class="typed-text" id="typedText">Agentic Workflows.</span><br>Real Business Impact.
+        <span class="highlight">LLM Systems.</span><br><span class="typed-text" id="typedText">Agentic Workflows.</span><br><span>Real Business Impact.</span>
       </h1>
       <p>
         We design, build, and deploy production-grade LLM and agentic AI systems for enterprise teams.
