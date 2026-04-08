@@ -1031,7 +1031,7 @@
 
     .case-studies-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
       gap: 24px;
     }
 
@@ -1481,13 +1481,22 @@
     }
 
     @media (max-width: 768px) {
-      .case-metric { width: 60px; height: 60px; }
-      .case-metric svg { width: 60px; height: 60px; }
-      .case-metric-label { font-size: 14px; }
+      .case-studies { padding: 40px 16px; }
+      .case-study-card { padding: 20px; }
+      .case-study-top { flex-direction: column; gap: 12px; }
+      .case-study-card h3 { font-size: 17px; }
+      .case-metric { width: 56px; height: 56px; }
+      .case-metric svg { width: 56px; height: 56px; }
+      .case-metric-label { font-size: 13px; }
+      .case-study-stack .tag { font-size: 11px; padding: 3px 8px; }
       .demo-before-after { grid-template-columns: 1fr; }
       .demo-ba-panel.before { border-right: none; border-bottom: 1px solid #e2e8f0; }
       .demo-dashboard-body { grid-template-columns: 1fr; gap: 8px; }
-      .demo-carousel { padding: 8px 16px 24px; }
+      .demo-carousel { padding: 8px 8px 24px; }
+      .demo-slide { padding: 0 12px; }
+      .whatsapp-float { width: 52px; height: 52px; bottom: 20px; right: 20px; }
+      .whatsapp-float svg { width: 28px; height: 28px; }
+      .whatsapp-tooltip { display: none; }
     }
 
     /* Alternating section backgrounds */
