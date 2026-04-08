@@ -290,7 +290,6 @@
       margin-bottom: 24px;
       color: var(--text-primary);
       -webkit-text-fill-color: var(--text-primary);
-      min-height: 186px;
     }
 
     .hero-content .highlight {
@@ -1237,7 +1236,6 @@
 
       .hero-content h1 {
         font-size: 42px;
-        min-height: 139px;
       }
 
       .features-grid,
@@ -1303,7 +1301,6 @@
 
       .hero-content h1 {
         font-size: 32px;
-        min-height: 106px;
       }
 
       .hero-content p {
@@ -1593,6 +1590,8 @@
     .typed-text {
       color: var(--green-primary);
       -webkit-text-fill-color: var(--green-primary);
+      display: inline-block;
+      min-height: 1.2em;
     }
 
     .typed-cursor {
@@ -1931,7 +1930,7 @@
     <div class="hero-glow" id="heroGlow"></div>
     <div class="hero-content">
       <h1>
-        <span class="highlight">LLM Systems.</span> <span class="typed-text" id="typedText">Agentic Workflows.</span><br>Real Business Impact.
+        <span class="highlight">LLM Systems.</span><br><span class="typed-text" id="typedText">Agentic Workflows.</span><br>Real Business Impact.
       </h1>
       <p>
         We design, build, and deploy production-grade LLM and agentic AI systems for enterprise teams.
