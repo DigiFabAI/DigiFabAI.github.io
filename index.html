@@ -1260,6 +1260,7 @@
 
     .testimonial-track {
       display: flex;
+      align-items: stretch;
       gap: 24px;
       animation: scrollTestimonials 40s linear infinite;
       width: max-content;
@@ -1282,6 +1283,8 @@
       border-radius: 16px;
       padding: 32px;
       transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
     }
 
     .testimonial-card:hover {
@@ -1305,6 +1308,7 @@
       color: var(--text-secondary);
       margin-bottom: 24px;
       font-style: italic;
+      flex: 1;
     }
 
     .testimonial-card-author {
@@ -1313,6 +1317,7 @@
       gap: 12px;
       border-top: 1px solid var(--border-color);
       padding-top: 20px;
+      margin-top: auto;
     }
 
     .testimonial-avatar {
