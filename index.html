@@ -2381,12 +2381,22 @@
             <div class="demo-dashboard-body">
               <div class="dash-stat"><span class="dash-stat-val">12,847</span><span class="dash-stat-label">Processed</span></div>
               <div class="dash-stat"><span class="dash-stat-val">4.2 min</span><span class="dash-stat-label">Avg Time</span></div>
-              <div class="dash-stat"><span class="dash-stat-val">73%</span><span class="dash-stat-label">Auto-Approved</span></div>
+              <div class="dash-stat"><span class="dash-stat-val">99.2%</span><span class="dash-stat-label">Accuracy</span></div>
             </div>
             <div class="demo-dashboard-bars">
               <div class="dash-bar-row"><span class="dash-bar-label">Auto-Approved</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:73%"></div></div><span class="dash-bar-pct">73%</span></div>
               <div class="dash-bar-row"><span class="dash-bar-label">Manual Review</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:19%"></div></div><span class="dash-bar-pct">19%</span></div>
               <div class="dash-bar-row"><span class="dash-bar-label">Flagged / Fraud</span><div class="dash-bar-track"><div class="dash-bar-fill" style="--bar-w:8%"></div></div><span class="dash-bar-pct">8%</span></div>
+            </div>
+            <div style="padding:0 20px 20px;border-top:1px solid #e8f5e9;margin-top:4px;padding-top:16px;">
+              <table style="width:100%;font-size:12px;color:var(--text-secondary);border-collapse:collapse;">
+                <tr style="font-weight:700;color:var(--text-muted);text-transform:uppercase;font-size:10px;letter-spacing:0.5px;">
+                  <td style="padding:4px 0;">Claim ID</td><td>Type</td><td>Amount</td><td style="text-align:right;">Status</td>
+                </tr>
+                <tr><td style="padding:4px 0;color:var(--text-primary);font-weight:500;">#CLM-8841</td><td>Auto Collision</td><td>$4,200</td><td style="text-align:right;"><span style="color:var(--green-primary);font-weight:600;">Auto-Approved</span></td></tr>
+                <tr><td style="padding:4px 0;color:var(--text-primary);font-weight:500;">#CLM-8842</td><td>Property Water</td><td>$18,750</td><td style="text-align:right;"><span style="color:#d97706;font-weight:600;">Under Review</span></td></tr>
+                <tr><td style="padding:4px 0;color:var(--text-primary);font-weight:500;">#CLM-8843</td><td>Liability</td><td>$62,000</td><td style="text-align:right;"><span style="color:#dc2626;font-weight:600;">Flagged</span></td></tr>
+              </table>
             </div>
           </div>
         </div>
@@ -2398,6 +2408,8 @@
               <p><span class="hl-red">Clause 7.2(a)</span> — Indemnification scope <span class="hl-red">unclear</span>, manual cross-reference needed with Exhibit B...</p>
               <p><span class="hl-red">Clause 12.1</span> — Termination notice period <span class="hl-red">conflicts</span> with Section 3.4 renewal terms...</p>
               <p><span class="hl-red">Clause 15.3</span> — Data retention clause <span class="hl-red">missing</span> GDPR compliance language...</p>
+              <p><span class="hl-red">Clause 9.4</span> — Non-compete radius <span class="hl-red">exceeds</span> state enforceable limit...</p>
+              <p><span class="hl-red">Exhibit B</span> — Payment schedule <span class="hl-red">mismatched</span> with §4.1 fee structure...</p>
               <span class="ba-time">⏱ ~4.5 hours per contract</span>
             </div>
             <div class="demo-ba-panel after">
@@ -2405,6 +2417,8 @@
               <p><span class="hl-green">Clause 7.2(a)</span> — Indemnification: <span class="hl-green">capped at 2x annual fees</span>, Exhibit B §3 confirmed ✓</p>
               <p><span class="hl-green">Clause 12.1</span> — Termination: <span class="hl-green">90-day notice</span>, auto-renew §3.4 aligned ✓</p>
               <p><span class="hl-green">Clause 15.3</span> — Data retention: <span class="hl-green">GDPR Art.17 compliant</span>, DPA cross-ref ✓</p>
+              <p><span class="hl-green">Clause 9.4</span> — Non-compete: <span class="hl-green">50mi radius, 12mo</span>, within CA limit ✓</p>
+              <p><span class="hl-green">Exhibit B</span> — Payment: <span class="hl-green">NET-30, §4.1 aligned</span>, no discrepancy ✓</p>
               <span class="ba-time">⚡ ~27 minutes per contract</span>
             </div>
           </div>
@@ -2413,6 +2427,9 @@
         <div class="demo-slide" data-industry="Retail / E-commerce">
           <div class="demo-workflow" id="demoWorkflow">
             <div class="demo-workflow-title">AI-Powered Product Search Pipeline</div>
+            <div style="text-align:center;padding:0 16px 16px;">
+              <span style="display:inline-block;padding:8px 16px;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-radius:10px;font-size:13px;color:#059669;font-weight:600;border:1px solid #bbf7d0;">"warm waterproof jacket for hiking in rain"</span>
+            </div>
             <div class="demo-workflow-steps">
               <div class="wf-step" data-delay="400">Query</div>
               <span class="wf-arrow" data-delay="700">→</span>
@@ -2424,6 +2441,24 @@
               <span class="wf-arrow" data-delay="2500">→</span>
               <div class="wf-step" data-delay="2800">Results</div>
             </div>
+            <div style="margin-top:20px;padding:0 16px;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);font-weight:700;margin-bottom:10px;">Top Results</div>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#fafffe;border:1px solid #e8f5e9;border-radius:8px;font-size:12px;">
+                  <span style="font-weight:600;color:var(--text-primary);">Arc'teryx Beta LT Jacket</span>
+                  <span style="color:var(--green-primary);font-weight:700;">98.4% match</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#fafffe;border:1px solid #e8f5e9;border-radius:8px;font-size:12px;">
+                  <span style="font-weight:600;color:var(--text-primary);">Patagonia Torrentshell 3L</span>
+                  <span style="color:var(--green-primary);font-weight:700;">96.1% match</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#fafffe;border:1px solid #e8f5e9;border-radius:8px;font-size:12px;">
+                  <span style="font-weight:600;color:var(--text-primary);">The North Face Dryzzle FUTURELIGHT</span>
+                  <span style="color:var(--green-primary);font-weight:700;">94.7% match</span>
+                </div>
+              </div>
+              <div style="text-align:center;margin-top:10px;font-size:11px;color:var(--text-muted);">500K+ SKUs searched in 120ms</div>
+            </div>
           </div>
         </div>
         <!-- 6. Alert -->
@@ -2432,15 +2467,39 @@
             <div class="demo-alert-header"><div class="alert-dot"></div>Anomaly Detected — Predictive Maintenance</div>
             <div class="demo-alert-body">
               <h4>Turbine #7 — Vibration Pattern Anomaly</h4>
-              <p>Bearing degradation signature detected. Predicted failure window: 48-72 hours. Maintenance crew notified.</p>
+              <p>Bearing degradation signature detected at 14:32 UTC. Vibration amplitude 2.4x above baseline. Predicted failure window: 48-72 hours. Maintenance crew automatically notified.</p>
               <div class="demo-alert-meta">
                 <span class="alert-badge severity">High Severity</span>
                 <span class="alert-badge confidence">94% Confidence</span>
                 <span class="alert-badge time">48h Window</span>
               </div>
+              <div style="margin-top:16px;padding:12px;background:#fafafa;border-radius:10px;border:1px solid #e8e8e8;">
+                <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);font-weight:700;margin-bottom:8px;">Sensor Readings — Last 24h</div>
+                <div style="display:flex;align-items:flex-end;gap:3px;height:40px;">
+                  <div style="flex:1;background:#d1fae5;border-radius:2px;height:30%;"></div>
+                  <div style="flex:1;background:#d1fae5;border-radius:2px;height:35%;"></div>
+                  <div style="flex:1;background:#d1fae5;border-radius:2px;height:28%;"></div>
+                  <div style="flex:1;background:#d1fae5;border-radius:2px;height:32%;"></div>
+                  <div style="flex:1;background:#d1fae5;border-radius:2px;height:30%;"></div>
+                  <div style="flex:1;background:#d1fae5;border-radius:2px;height:36%;"></div>
+                  <div style="flex:1;background:#d1fae5;border-radius:2px;height:33%;"></div>
+                  <div style="flex:1;background:#d1fae5;border-radius:2px;height:38%;"></div>
+                  <div style="flex:1;background:#fef08a;border-radius:2px;height:52%;"></div>
+                  <div style="flex:1;background:#fef08a;border-radius:2px;height:61%;"></div>
+                  <div style="flex:1;background:#fecaca;border-radius:2px;height:78%;"></div>
+                  <div style="flex:1;background:#fecaca;border-radius:2px;height:92%;"></div>
+                  <div style="flex:1;background:#fecaca;border-radius:2px;height:100%;animation:pulse 2s infinite;"></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-muted);margin-top:4px;">
+                  <span>-24h</span><span>-12h</span><span>Now</span>
+                </div>
+              </div>
               <div class="demo-alert-bar">
                 <div class="demo-alert-bar-label">Model Confidence</div>
                 <div class="demo-alert-bar-track"><div class="demo-alert-bar-fill"></div></div>
+              </div>
+              <div style="margin-top:12px;font-size:12px;color:var(--text-muted);">
+                <strong style="color:var(--text-primary);">Recommended Action:</strong> Schedule bearing replacement for Turbine #7 within 48h. Work order #WO-2847 auto-generated.
               </div>
             </div>
           </div>
