@@ -1485,6 +1485,7 @@
     }
 
     @media (max-width: 768px) {
+      /* Case study cards */
       .case-studies { padding: 40px 16px; overflow: visible; }
       .case-studies-grid { grid-template-columns: 1fr !important; gap: 16px; }
       .case-study-card { padding: 18px; width: 100%; max-width: 100%; }
@@ -1494,11 +1495,41 @@
       .case-metric svg { width: 56px; height: 56px; }
       .case-metric-label { font-size: 13px; }
       .case-study-stack .tag { font-size: 11px; padding: 3px 8px; }
+
+      /* Demo carousel → vertical stack on mobile */
+      .demo-carousel { overflow: visible !important; }
+      .demo-carousel-inner {
+        flex-direction: column !important;
+        transform: none !important;
+        gap: 20px;
+      }
+      .demo-slide {
+        min-width: 100% !important;
+        padding: 0 !important;
+      }
+      .demo-carousel-label { display: none; }
+      .demo-nav { display: none; }
+
+      /* Demo components */
       .demo-before-after { grid-template-columns: 1fr; }
       .demo-ba-panel.before { border-right: none; border-bottom: 1px solid #e2e8f0; }
-      .demo-dashboard-body { grid-template-columns: 1fr; gap: 8px; }
-      .demo-carousel { padding: 8px 8px 24px; }
-      .demo-slide { padding: 0 12px; }
+      .demo-ba-panel { padding: 16px; font-size: 12px; }
+      .demo-ba-panel .hl-red,
+      .demo-ba-panel .hl-green { font-size: 12px; }
+      .demo-dashboard-body { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .dash-stat-val { font-size: 18px; }
+      .dash-stat-label { font-size: 9px; }
+      .demo-terminal { font-size: 11px; }
+      .demo-terminal-body { padding: 12px; min-height: auto; }
+      .demo-terminal-body .line { font-size: 11px; }
+      .demo-workflow-steps { gap: 4px; }
+      .wf-step { padding: 6px 10px; font-size: 11px; }
+      .wf-arrow { font-size: 12px; }
+      .demo-alert-body { padding: 16px; }
+      .demo-alert-body h4 { font-size: 15px; }
+      .demo-alert-body p { font-size: 12px; }
+
+      /* Chat button */
       .chat-float { width: 52px; height: 52px; bottom: 20px; right: 20px; }
       .chat-float svg { width: 28px; height: 28px; }
       .whatsapp-tooltip { display: none; }
