@@ -876,6 +876,100 @@
       border-radius: 8px;
     }
 
+    /* Case Studies */
+    .case-studies {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 80px 32px;
+    }
+
+    .case-studies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 32px;
+    }
+
+    .case-study-card {
+      background: var(--dark-card);
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .case-study-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green-primary);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .case-study-industry {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--green-primary);
+      margin-bottom: 12px;
+    }
+
+    .case-study-card h3 {
+      font-size: 22px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .case-study-card h4 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .case-study-card p {
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .case-study-stack {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .case-study-stack .tag {
+      padding: 6px 12px;
+      background: rgba(29, 206, 112, 0.1);
+      border: 1px solid rgba(29, 206, 112, 0.3);
+      border-radius: 16px;
+      font-size: 13px;
+      color: var(--green-primary);
+    }
+
+    .case-study-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--green-primary);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: gap 0.2s;
+    }
+
+    .case-study-link:hover {
+      gap: 10px;
+    }
+
     /* Footer */
     footer {
       max-width: 1280px;
@@ -909,7 +1003,8 @@
       .features-grid,
       .platform-grid,
       .audience-grid,
-      .courses-grid {
+      .courses-grid,
+      .case-studies-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1016,6 +1111,7 @@
       </a>
       <nav>
         <a href="#services">Services</a>
+        <a href="#case-studies">Case Studies</a>
         <a href="#process">How We Work</a>
         <a href="#about">About</a>
         <a href="#training">Training</a>
@@ -1035,6 +1131,7 @@
   <!-- Mobile Navigation -->
   <div class="mobile-nav" id="mobileNav">
     <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#case-studies" onclick="closeMobileMenu()">Case Studies</a>
     <a href="#process" onclick="closeMobileMenu()">How We Work</a>
     <a href="#about" onclick="closeMobileMenu()">About</a>
     <a href="#training" onclick="closeMobileMenu()">Training</a>
@@ -1137,6 +1234,35 @@
         <p>
           Internal AI platforms, developer tooling, and agentic productivity systems.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section id="case-studies" class="case-studies">
+    <div class="section-header">
+      <h2>Case Studies</h2>
+      <p>Real-world AI systems we've designed and built for enterprise clients.</p>
+    </div>
+    <div class="case-studies-grid">
+      <div class="case-study-card">
+        <span class="case-study-industry">Real Estate / PropTech</span>
+        <h3>Property Valuation RAG System</h3>
+        <h4>Challenge</h4>
+        <p>Real estate firms needed accurate Q&A over hundreds of appraisal PDFs — standard chunkers destroyed table structure and valuation context.</p>
+        <h4>Solution</h4>
+        <p>Built a layout-aware RAG pipeline with custom PDF parser, semantic chunking, ChromaDB vector store, and Gemini 1.5 Pro grounded generation on GCP.</p>
+        <div class="case-study-stack">
+          <span class="tag">Python</span>
+          <span class="tag">ChromaDB</span>
+          <span class="tag">Vertex AI</span>
+          <span class="tag">Google Gemini</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">GCP</span>
+        </div>
+        <a href="#" class="case-study-link">
+          View on GitHub <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+        </a>
       </div>
     </div>
   </section>
