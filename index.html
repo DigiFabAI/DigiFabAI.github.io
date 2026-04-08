@@ -1176,6 +1176,150 @@
         text-align: center;
       }
     }
+
+    /* Scroll-reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered children (cards, grid items) */
+    .reveal-children > * {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-children.visible > *:nth-child(1) { transition-delay: 0ms; }
+    .reveal-children.visible > *:nth-child(2) { transition-delay: 100ms; }
+    .reveal-children.visible > *:nth-child(3) { transition-delay: 200ms; }
+    .reveal-children.visible > *:nth-child(4) { transition-delay: 300ms; }
+    .reveal-children.visible > *:nth-child(5) { transition-delay: 400ms; }
+    .reveal-children.visible > *:nth-child(6) { transition-delay: 500ms; }
+
+    .reveal-children.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Background floating orbs */
+    .bg-orbs {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.12;
+      animation: floatOrb 20s ease-in-out infinite;
+    }
+
+    .bg-orb:nth-child(1) {
+      width: 500px;
+      height: 500px;
+      background: var(--green-primary);
+      top: -10%;
+      right: -5%;
+      animation-duration: 25s;
+    }
+
+    .bg-orb:nth-child(2) {
+      width: 400px;
+      height: 400px;
+      background: #34d399;
+      bottom: 20%;
+      left: -8%;
+      animation-duration: 20s;
+      animation-delay: -5s;
+    }
+
+    .bg-orb:nth-child(3) {
+      width: 300px;
+      height: 300px;
+      background: #06b6d4;
+      top: 40%;
+      right: 15%;
+      animation-duration: 22s;
+      animation-delay: -10s;
+    }
+
+    @keyframes floatOrb {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(30px, -40px) scale(1.05); }
+      50% { transform: translate(-20px, 20px) scale(0.95); }
+      75% { transform: translate(15px, 35px) scale(1.02); }
+    }
+
+    /* Noise overlay */
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    /* Hero entrance animation */
+    .hero-content {
+      animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-image {
+      animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    }
+
+    @keyframes heroFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Stat counter glow on reveal */
+    .stat-number {
+      transition: text-shadow 0.6s ease;
+    }
+
+    .reveal.visible .stat-number {
+      text-shadow: 0 0 30px rgba(7, 210, 39, 0.3);
+    }
+
+    /* Reduce motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-children > * {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .bg-orb { animation: none; }
+      .hero-content, .hero-image { animation: none; }
+    }
   </style>
 
   <script>
@@ -1210,6 +1354,14 @@
   </script>
 </head>
 <body>
+  <!-- Background effects -->
+  <div class="bg-orbs">
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+  </div>
+  <div class="noise-overlay"></div>
+
   <!-- Header -->
   <header>
     <div class="header-container">
@@ -1272,7 +1424,7 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="features">
+  <section id="services" class="features reveal">
     <div class="section-header">
       <h2>What We Build</h2>
       <p>
@@ -1280,7 +1432,7 @@
         that deliver measurable business value.
       </p>
     </div>
-    <div class="features-grid">
+    <div class="features-grid reveal-children">
       <div class="feature-card">
         <div class="feature-card-icon"><i data-lucide="bot"></i></div>
         <h3>Agentic Workflow Design</h3>
@@ -1309,7 +1461,7 @@
   </section>
 
   <!-- Industries Section -->
-  <section id="industries" class="features section-alt">
+  <section id="industries" class="features section-alt reveal">
     <div class="section-header">
       <h2>Industries We Serve</h2>
       <p>
@@ -1317,7 +1469,7 @@
         and operations-heavy environments.
       </p>
     </div>
-    <div class="industries-grid">
+    <div class="industries-grid reveal-children">
       <div class="feature-card">
         <div class="feature-card-icon"><i data-lucide="landmark"></i></div>
         <h3>Financial Services & Banking</h3>
@@ -1350,12 +1502,12 @@
   </section>
 
   <!-- Case Studies Section -->
-  <section id="case-studies" class="case-studies">
+  <section id="case-studies" class="case-studies reveal">
     <div class="section-header">
       <h2>Case Studies</h2>
       <p>Real-world AI systems we've designed and built for enterprise clients.</p>
     </div>
-    <div class="case-studies-grid">
+    <div class="case-studies-grid reveal-children">
       <div class="case-study-card">
         <div class="case-study-icon"><i data-lucide="home"></i></div>
         <span class="case-study-industry">Real Estate / PropTech</span>
@@ -1492,7 +1644,7 @@
   </section>
 
   <!-- How We Work Section -->
-  <section id="process" class="platform section-alt">
+  <section id="process" class="platform section-alt reveal">
     <div class="platform-inner">
       <div class="section-header">
         <h2>How We Work</h2>
@@ -1501,7 +1653,7 @@
           with clarity at every stage.
         </p>
       </div>
-      <div class="platform-grid">
+      <div class="platform-grid reveal-children">
         <div class="platform-step">
           <div class="step-icon"><i data-lucide="search"></i></div>
           <div class="step-number">1</div>
@@ -1549,7 +1701,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about">
+  <section id="about" class="about reveal">
     <div class="section-header">
       <h2>About DigiFab AI</h2>
     </div>
@@ -1575,7 +1727,7 @@
   </section>
 
   <!-- Courses & Training Section -->
-  <section id="training" class="courses section-alt">
+  <section id="training" class="courses section-alt reveal">
     <div class="section-header">
       <h2>Courses & Training</h2>
       <p>
@@ -1601,7 +1753,7 @@
         <span class="stat-label">Likes</span>
       </div>
     </div>
-    <div class="courses-grid">
+    <div class="courses-grid reveal-children">
       <a href="https://www.linkedin.com/learning/python-working-with-predictive-analytics" target="_blank" rel="noopener" class="course-card">
         <h4>Python: Working with Predictive Analytics</h4>
         <div class="course-meta">
@@ -1651,14 +1803,14 @@
   </section>
 
   <!-- Audience Section -->
-  <section class="audience">
+  <section class="audience reveal">
     <div class="section-header">
       <h2>Who We Work With</h2>
       <p>
         If your team is exploring LLM adoption or struggling to move AI projects into production, we should talk.
       </p>
     </div>
-    <div class="audience-grid">
+    <div class="audience-grid reveal-children">
       <div class="audience-card">
         <div class="audience-card-icon"><i data-lucide="building-2"></i></div>
         <h3>Enterprise AI Teams</h3>
@@ -1687,7 +1839,7 @@
   </section>
 
   <!-- CTA Section -->
-  <section id="contact" class="cta-section">
+  <section id="contact" class="cta-section reveal">
     <div class="cta-box">
       <h2>Ready to Build Production AI?</h2>
       <p>
@@ -1773,6 +1925,19 @@
       const mobileNav = document.getElementById('mobileNav');
       mobileNav.classList.remove('open');
     }
+
+    // Scroll-reveal with Intersection Observer
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-children').forEach(el => {
+      revealObserver.observe(el);
+    });
   </script>
 </body>
 </html>
