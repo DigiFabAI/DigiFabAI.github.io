@@ -1045,6 +1045,8 @@
       display: flex;
       flex-direction: column;
       cursor: pointer;
+      min-width: 0;
+      overflow: hidden;
     }
 
     .case-study-card:hover {
@@ -1162,6 +1164,8 @@
       font-size: 14px;
       line-height: 1.6;
       margin-bottom: 12px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     .case-study-expand {
@@ -1481,8 +1485,9 @@
     }
 
     @media (max-width: 768px) {
-      .case-studies { padding: 40px 16px; }
-      .case-study-card { padding: 20px; }
+      .case-studies { padding: 40px 16px; overflow: visible; }
+      .case-studies-grid { grid-template-columns: 1fr !important; gap: 16px; }
+      .case-study-card { padding: 18px; width: 100%; max-width: 100%; }
       .case-study-top { flex-direction: column; gap: 12px; }
       .case-study-card h3 { font-size: 17px; }
       .case-metric { width: 56px; height: 56px; }
